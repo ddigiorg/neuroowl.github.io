@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neuroowl | Technology - HTM </title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/misc/logo_32x32.png" />
+</head>
+<body>
+	<div id="navigation-bar"></div>
+	<div id="text">
+		<h1>Hierarchical Temporal Memory</h1>
+			<p>
+				Hierarchical Temporal Memory (HTM) is a theoretical framework of the 
+				neocortex for both biological and machine intelligence under development by
+				Numenta <a href="#1">[1]</a>.  Therefore, the topics below may contain 
+				redundant information concerning neuroscience topics found on this website
+				that are critical to understanding HTM theory.  Additionally, the researchers
+				at Numenta are constantly evolving the theory.  Although the main principles
+				presented below remain steady throughout HTM's development, a few details 
+				may be missing or dated.
+			</p>
+			<p>
+				Have questions for the HTM researchers?  Join the conversation on the  
+				<a href="https://discourse.numenta.org/">HTM Forum</a>.
+			</p>
+		<h2>Introduction</h2>
+			<p>
+				The ultimate promise of brain theory and machine intelligence is the 
+				acquisition	and dissemination of new knowledge. <a href="#2">[2]</a>
+			</p>
+			<p>
+				The goal of building intelligent machines is not to replicate human 
+				behavior, nor to build a brain, nor to create machines to do what humans do. 
+				The goal of building intelligent machines is to create machines that work 
+				on the same principles as the brain -- machines that are able to learn, 
+				discover, and adapt in ways that computers can't and brains can.  HTM is a 
+				theory of the neocortex and a few related brain structures; it is not an 
+				attempt to model or understand every part of the human brain.
+				<a href="#2">[2]</a>
+			</p>
+			<p>
+				Intelligence is the ability to acquire knowledge in an attempt to achieve
+				a wide range of goals.  Something that is intelligent:
+			</p>
+			<ul>
+				<li>continuously learns</li>
+				<li>interacts with the environment</li>
+				<li>is general in nature</li>
+				<li>has goal-oriented behavior</li>
+			</ul>
+		<h2>HTM Principles</h2>
+			<h3>Common Algorithms in Regions</h3>
+				<p>
+					Every region of the neocortex performs the same set of memory and 
+					algorithmic functions.  We know that brains use common principles for
+					vision, hearing, touch, language, and behavior. This remarkable fact was
+					first proposed in 1979 by Vernon Mountcastle [REF].  We strive not to 
+					understand vision or hearing or	robotics as separate problems, but to 
+					understand how these capabilities are fundamentally all the same, and 
+					what set of algorithms can see AND hear AND generate behavior. 
+					<a href="#2">[2]</a>
+				</p>
+			<h3>Hierarchy of Regions</h3>
+				<p>
+					Every neocortex organizes these regions in a hierarchies.
+				</p>
+			<h3>Sparse Distributed Representations (SDRs)</h3>
+				<p>
+					An active neuron is one that is generating spikes, or action potentials.
+					One of the most remarkable observations about the neocortex is that no 
+					matter where you look, the activity of neurons is sparse, meaning only 
+					a small percentage of them are rapidly spiking at any point in time. 
+					The sparsity might vary from less than one percent to several percent, 
+					but it is always sparse. <a href="#2">[2]</a>
+				</p>
+				<p>
+					In HTM SDRs are the representation format used by the neocortex.  SDRs 
+					are	vectors with thousands of bits.  At any point in time a small 
+					percentage of the bits are 1's and the rest are 0's. With SDRs, the bits
+					of the representation encode the semantic properties of the 
+					representation; the representation and its meaning are one and the 
+					same. Two SDRs that have 1 bits in the same location share a semantic 
+					property. The more 1 bits two SDRs share, the more semantically similar
+					are the two representations. The SDR explains how brains make semantic 
+					generalizations; it is an inherent property of the representation 
+					method. <a href="#2">[2]</a>
+				</p>
+				<p>[SDR PICTURE]</p>
+			<h3>Sensory Encoders</h3>
+				<p>
+					Every HTM system needs the equivalent of sensory organs. We call these
+					"encoders".  An encoder takes some type of data -- it could be a number, 
+					time, temperature, image, or GPS location -- and turns it into a SDR that 
+					can be digested by the HTM learning algorithms. <a href="#2">[2]</a>
+				</p>
+				<img src="images/technology/htm/encoder.png" alt="encoder" style="margin: 25px auto">
+			<h3>Sensory-motor Systems</h3>
+				<p>
+					Neuroanatomy tells us tells us that every region of the neocortex has 
+					both sensory and motor functions.  Therefore, vision, hearing, and touch
+					are integrated sensory-motor senses; we can't build systems that see and
+					hear like humans do without incorporating movement of the eyes, body, 
+					and limbs. <a href="#2">[2]</a>
+				</p>
+			<h3>Streaming Data and Sequence Memory</h3>
+			<h3>On-line Learning</h3>
+		<h2>Cortical Functions</h2>
+			<h3>Spatial Pooling</h3>
+			<h3>Temporal Memory</h3>
+		<h2>HTM Neocortical Structure</h2>
+			<p>
+				The human neocortex <a href="#2">[2]</a>:
+			</p>
+			<ul>
+				<li>occupies about 75% of the brain's volume</li>
+				<li>
+					No one knows exactly how many neurons are in a human neocortex, but 
+					recent "primate scale up" methods put the estimate at 86 billion
+					(Herculano-Houzel, 2012). <a href="#2">[2]</a>
+				</li>
+				<li>is a sheet of neural tissue about 1000 square cm in area and 2.5mm thick</li>
+				<li>one square mm of cortex has about 100K neurons and 1B synapses</li>
+				<li>
+					is distributed in 6 layers (actually more like nine layers 1, 2, 3a, 3b,
+					4, 5a, 5b, 6a, 6b)
+				</li>
+			</ul>
+			<h3>HTM Region</h3>
+				<p>
+					Cortical regions are defined by connectivity. Regions pass information 
+					to each other by sending bundles of nerve fibers into the white matter
+					just below the neocortex. The nerve fibers re-enter at another 
+					neocortical region. The connections between regions define a logical 
+					hierarchy. <a href="#2">[2]</a>
+				</p>
+				<ul>
+					<li>In the human neocortex a cortical region is about 1.0-1.5 square mm in area and contains about 2000+ minicolumns</li>
+					<li>One HTM Region has 2048 minicolumns under 1 spatial pooler</li>
+				</ul>
+				<img src="images/technology/htm/region.png" alt="region" style="margin: 25px auto">
+			<h3>Layer 1</h3>
+			<h3>Layer 2</h3>
+			<h3>Layer 3a</h3>
+			<h3>Layer 3b</h3>
+				<img src="images/technology/htm/layer3b.png" alt="layer3b" style="margin: 25px auto">
+			<h3>HTM Column (Minicolumn)</h3>
+				<ul>
+					<li>About 30-50 microns wide with 100-120 neurons across all 6 layers</li>
+					<li>HTM: 32 cells per mini-column in layer 3 implementation</li>
+				</ul>
+			<h3>HTM Cell</h3>
+				<p>
+					A HTM cell is a modeled based on pyramidal neurons, the most common type
+					of neuron in the neocortex.  The pyramidal neuron is the core 
+					information processing element of the neocortex, and synapses are the
+					substrate of memory <a href="#2">[2]</a>.  In a real neuron when it is 
+					in an active state the axon outputs a short burst of action potentials.
+					When it is in a predictive state the axon outputs a slower, steady rate
+					of action potentials. In the HTM cell model these action potentials are 
+					only binary "on" or "off" to represent a cell's state.
+				</p>
+				<img src="images/technology/htm/cell_model.png" alt="cell_model" style="margin: 25px auto">
+		<h2>References</h2>
+			<p><a name="1">[1]</a>
+				&nbsp; <a href="http://numenta.com/">link</a>
+				&nbsp; Numenta.
+			</p>
+			<p><a name="2">[2]</a>
+				&nbsp; <a href="http://numenta.com/biological-and-machine-intelligence/">link</a>
+				&nbsp; Jeff Hawkins et al. Biological and Machine Intelligence, 2016.
+			</p>
+			<p><a name="3">[3]</a>
+				&nbsp; <a href="https://github.com/numenta/nupic.research/blob/master/docs/bibliography/htm_bibliography.pdf">link</a>
+				&nbsp; Subutai Ahmad and Yuwei Chu. Annotated Bibliography for HTM Researchers, 2016.
+			</p>
+			<p>https://discourse.numenta.org/t/htm-cheat-sheet/828</p>
+			<p>https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697</p>
+			<p>https://discourse.numenta.org/t/1609-03971-feynman-machine-the-universal-dynamical-systems-computer/1398</p>
+			<p>https://discourse.numenta.org/t/temporal-memory-handling-no-previous-winner-cells/1250</p>
+			<p>https://discourse.numenta.org/t/understanding-the-phrase-layer-x-projects-to-layer-y/1192/3</p>			
+		<p>Page update: 2016-10-02</p>
+	</div>
+	<script type="text/javascript" src="javascript/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="javascript/navbarLoad.js"></script>
+</body>
+</html>
