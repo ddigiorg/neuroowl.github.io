@@ -15,7 +15,7 @@
 				Numenta <a href="#1">[1]</a>.  Therefore, the topics below may contain 
 				redundant information concerning neuroscience topics found on this website
 				that are critical to understanding HTM theory.  Additionally, the researchers
-				at Numenta are constantly evolving the theory.  Although the main principles
+				at Numenta are constantly evolving the theory and although the main principles
 				presented below remain steady throughout HTM's development, a few details 
 				may be missing or dated.
 			</p>
@@ -40,7 +40,7 @@
 			</p>
 			<p>
 				Intelligence is the ability to acquire knowledge in an attempt to achieve
-				a wide range of goals.  Something that is intelligent:
+				a wide range of goals.  Something that is intelligent [Ref]:
 			</p>
 			<ul>
 				<li>continuously learns</li>
@@ -54,7 +54,7 @@
 					Every region of the neocortex performs the same set of memory and 
 					algorithmic functions.  We know that brains use common principles for
 					vision, hearing, touch, language, and behavior. This remarkable fact was
-					first proposed in 1979 by Vernon Mountcastle [REF].  We strive not to 
+					first proposed in 1979 by Vernon Mountcastle [REF?].  We strive not to 
 					understand vision or hearing or	robotics as separate problems, but to 
 					understand how these capabilities are fundamentally all the same, and 
 					what set of algorithms can see AND hear AND generate behavior. 
@@ -103,29 +103,40 @@
 					and limbs. <a href="#2">[2]</a>
 				</p>
 			<h3>Streaming Data and Sequence Memory</h3>
+				<p>
+					WIP
+				</p>
 			<h3>On-line Learning</h3>
-		<h2>Cortical Functions</h2>
-			<h3>Spatial Pooling</h3>
-			<h3>Temporal Memory</h3>
-		<h2>HTM Neocortical Structure</h2>
+				<p>
+					WIP
+				</p>
+		<h2>HTM Neocortical Structure Overview</h2>
 			<p>
-				The human neocortex <a href="#2">[2]</a>:
+				The human neocortex:
 			</p>
 			<ul>
-				<li>occupies about 75% of the brain's volume</li>
+				<li>
+					occupies about 75% of the brain's volume <a href="#2">[2]</a>
+				</li>
 				<li>
 					No one knows exactly how many neurons are in a human neocortex, but 
-					recent "primate scale up" methods put the estimate at 86 billion
-					(Herculano-Houzel, 2012). <a href="#2">[2]</a>
+					recent "primate scale up" methods put the estimate at 86 billion 
+					<a href="#2">[2]</a>
 				</li>
-				<li>is a sheet of neural tissue about 1000 square cm in area and 2.5mm thick</li>
-				<li>one square mm of cortex has about 100K neurons and 1B synapses</li>
+				<li>
+					is a sheet of neural tissue about 1000 square cm in area and 2.5mm 
+					thick <a href="#2">[2]</a>
+				</li>
+				<li>
+					one square mm of cortex has about 100K neurons and 1B synapses 
+					<a href="#6">[6]</a>
+				</li>
 				<li>
 					is distributed in 6 layers (actually more like nine layers 1, 2, 3a, 3b,
-					4, 5a, 5b, 6a, 6b)
+					4, 5a, 5b, 6a, 6b) <a href="#6">[6]</a>
 				</li>
 			</ul>
-			<h3>HTM Region</h3>
+			<h3>Regions</h3>
 				<p>
 					Cortical regions are defined by connectivity. Regions pass information 
 					to each other by sending bundles of nerve fibers into the white matter
@@ -135,31 +146,147 @@
 				</p>
 				<ul>
 					<li>In the human neocortex a cortical region is about 1.0-1.5 square mm in area and contains about 2000+ minicolumns</li>
-					<li>One HTM Region has 2048 minicolumns under 1 spatial pooler</li>
+					<li>One HTM Region has 2048 minicolumns</li>
 				</ul>
 				<img src="images/technology/htm/region.png" alt="region" style="margin: 25px auto">
-			<h3>Layer 1</h3>
-			<h3>Layer 2</h3>
-			<h3>Layer 3a</h3>
-			<h3>Layer 3b</h3>
-				<img src="images/technology/htm/layer3b.png" alt="layer3b" style="margin: 25px auto">
-			<h3>HTM Column (Minicolumn)</h3>
-				<ul>
-					<li>About 30-50 microns wide with 100-120 neurons across all 6 layers</li>
-					<li>HTM: 32 cells per mini-column in layer 3 implementation</li>
-				</ul>
-			<h3>HTM Cell</h3>
+			<h3>Minicolumns</h3>
 				<p>
-					A HTM cell is a modeled based on pyramidal neurons, the most common type
-					of neuron in the neocortex.  The pyramidal neuron is the core 
-					information processing element of the neocortex, and synapses are the
-					substrate of memory <a href="#2">[2]</a>.  In a real neuron when it is 
-					in an active state the axon outputs a short burst of action potentials.
-					When it is in a predictive state the axon outputs a slower, steady rate
-					of action potentials. In the HTM cell model these action potentials are 
-					only binary "on" or "off" to represent a cell's state.
+					WIP
 				</p>
-				<img src="images/technology/htm/cell_model.png" alt="cell_model" style="margin: 25px auto">
+				<ul>
+					<li>
+						About 30-50 microns wide with 100-120 neurons across all 6 layers.
+						<a href="#2">[2]</a>
+					</li>
+				</ul>
+			<h3>Neurons</h3>
+				<p>
+					Pyramidal neurons represent the majority of excitatory neurons in the 
+					neocortex. Each pyramidal neuron receives input from thousands of 
+					excitatory synapses that are segregated onto dendritic branches. The 
+					dendrites themselves are segregated into apical, basal, and proximal 
+					integration zones, which have different properties. Experimental results
+					show that the coincident activation of 8-20 synapses in close spatial 
+					proximity on a dendrite will combine in a non-linear fashion and cause 
+					an NMDA dendritic spike. Thus, a small set of neighboring synapses acts 
+					as a pattern detector.<a href="#3">[3]</a>
+				</p>
+				<ul>
+					<li>
+						<b>Proximal Dendrites</b>: The proximal synapses, those closest to 
+						the cell body, define the receptive field, or feedforward input, of 
+						a cell.  Proximal synapses a relatively large effect at the soma, 
+						directly lead to action potentials, or active state.
+						<a href="#3">[3]</a>
+					</li>
+					<li>
+						<b>(Distal) Basal Dendrites</b>: Basal synapses learn transitions 
+						in sequences.  When a pattern is recognized on a basal dendrite it 
+						generates an NMDA spike. The depolarization due to an NMDA spike 
+						attenuates in amplitude by the time it reaches the soma, therefore 
+						when a basal dendrite recognizes a pattern it will depolarize the 
+						soma but not enough to generate a somatic action potential.  This
+						puts the cell in a predictive state, meaning a slightly depolarized
+						cell fires earlier than it would otherwise if it subsequently 
+						receives sufficient feedforward input. <a href="#3">[3]</a>
+					</li>
+					<li>
+						<b>(Distal) Apical Dendrites</b>: Apical synapses invoke a top-down
+						expectation.  NMDA spikes generated depolarize 
+						the soma but typically not sufficiently to generate a somatic action 
+						potential. This puts the cell in a predictive state. 
+						<a href="#3">[3]</a>
+					</li>
+				</ul>
+			<h3>Synaptic Learning</h3>
+				<p>
+					Each dendrite segment has synapses, which form the fundamental memory
+					storage of the neocortex.  For a neuron to recognize a pattern of 
+					activity it requires a set of co-located synapses (typically 15-20) 
+					that connect to a subset of the cells that are active in the pattern to
+					be recognized. Learning to recognize a new pattern is accomplished by 
+					the formation of a set of new synapses collocated on a dendritic 
+					segment. <a href="#3">[3]</a>
+				</p>
+				<img src="images/technology/htm/synaptic_learning.png" alt="synaptic_learning" style="margin: 25px auto">
+				<p>
+					*Note: Numenta uses floating permanence values from 0.0 to 1.0.  I 
+					prefer to use int8 values from 0 to 99, which is why the figures above 
+					display integer permanence values.
+				</p>
+		<h2>Layer 1</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 2</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 3a</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 3b</h2>
+
+			<p>
+				In the human neocortex, layer 3b primarily contains pyramidal neurons.
+				In HTM, Layer 3b handles sequence memory which is the recognition and 
+				inference of inputted patterns over time and predition of future patterns.
+				Proximal dendrites of cells in L3b receive signals from sensory encoders 
+				and spatially pool, selecting a sparse set of active minicolumns.  Then
+				cells are set to active state, predict state based on basal synapse 
+				connections, and winner state which is an artefact of the L3b algorithm.
+			</p>
+			<p>
+				This graphic gives an outline of how L3b algorithm functions in HTM.
+			</p>
+			<img src="images/technology/htm/l3b_overview.png" alt="l3b_overview" style="margin: 25px auto">
+				<h3>L3b Column</h3>
+					<p>
+						WIP
+					</p>
+					<img src="images/technology/htm/l3b_column.png" alt="l3b_column" style="margin: 25px auto">
+				<h3>L3b Cell</h3>
+					<p>
+						WIP
+					</p>
+					<img src="images/technology/htm/l3b_cell.png" alt="l3b_cell" style="margin: 25px auto">
+				<h3> Typical HTM L3b Implementation Parameters</h3>
+					<p>Model Implemantation Parameters <a href="#5">[5]</a>:</p>
+					<ul>
+						<li>Num Columns (N): 2048</li>
+						<li>Num Cells per Column (M): 32</li>
+						<li>Num of active bits (w) : 41</li>
+						<li>Sparsity (w/N) : 2%</li>
+						<li>Dendritic Segment Activation Threshold (theta): 15</li>
+						<li>Initial Synaptic Permanence: 0.21</li>
+						<li>Connection Threshold for Synaptic Permanence: 0.5</li>
+						<li>Synaptic Permanence Increment and Decrement: +/- 0.1</li>
+						<li>Synaptic Permanence Decrement for Predicted Inactive Segments: 0.01</li>
+						<li>Maximum Number of Segments per Cell: 128</li>
+						<li>Maximum Number of Synapses per Segment: 128</li>
+						<li>Maximum Number of New Synapses Added at each Step: 32</li>
+					</ul>
+		<h2>Layer 4</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 5a</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 5b</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 6a</h2>
+			<p>
+				WIP
+			</p>
+		<h2>Layer 6b</h2>
+			<p>
+				WIP
+			</p>
 		<h2>References</h2>
 			<p><a name="1">[1]</a>
 				&nbsp; <a href="http://numenta.com/">link</a>
@@ -170,15 +297,28 @@
 				&nbsp; Jeff Hawkins et al. Biological and Machine Intelligence, 2016.
 			</p>
 			<p><a name="3">[3]</a>
+				&nbsp; <a href="http://journal.frontiersin.org/article/10.3389/fncir.2016.00023/full">link</a>
+				&nbsp; Jeff Hawkins Subutai Ahmad. Why Neurons Have Thousands of Synapses a
+				Theory of Sequence Memory in Neocortex, 2016.
+			</p>
+			<p><a name="4">[4]</a>
 				&nbsp; <a href="https://github.com/numenta/nupic.research/blob/master/docs/bibliography/htm_bibliography.pdf">link</a>
 				&nbsp; Subutai Ahmad and Yuwei Chu. Annotated Bibliography for HTM Researchers, 2016.
 			</p>
-			<p>https://discourse.numenta.org/t/htm-cheat-sheet/828</p>
-			<p>https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697</p>
+			<p><a name="5">[5]</a>
+				&nbsp; <a href="https://arxiv.org/abs/1512.05463">link</a>
+				&nbsp; Yuwei Cui, Subutai Ahmad and Jeff Hawkins. Continuous Online Sequence Learning with an Unsupervised Neural Network Model, 2015.
+			</p>
+			<p><a name="6">[6]</a>
+				&nbsp; <a href="https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697">link</a>
+				&nbsp; Numenta Forum. Preliminary details about new theory work on sensory-motor inference, 2016.
+			</p>
+			<p>WIP:</p>
+			<p></p>
 			<p>https://discourse.numenta.org/t/1609-03971-feynman-machine-the-universal-dynamical-systems-computer/1398</p>
 			<p>https://discourse.numenta.org/t/temporal-memory-handling-no-previous-winner-cells/1250</p>
 			<p>https://discourse.numenta.org/t/understanding-the-phrase-layer-x-projects-to-layer-y/1192/3</p>			
-		<p>Page update: 2016-10-02</p>
+		<p>Page update: 2016-10-09</p>
 	</div>
 	<script type="text/javascript" src="javascript/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript" src="javascript/navbarLoad.js"></script>
