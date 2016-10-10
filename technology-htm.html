@@ -208,6 +208,23 @@
 					the formation of a set of new synapses collocated on a dendritic 
 					segment. <a href="#3">[3]</a>
 				</p>
+				<p>
+					The permanence value is incremented and decremented using a Hebbian-like
+					rule. If the permanence value exceeds a threshold, such as 0.3, then 
+					the weight of the synapse is 1, if the permanence value is at or below 
+					the threshold then the weight of the synapse is 0. The threshold 
+					represents the establishment of a synapse, albeit one that could easily
+					disappear. A synapse with a permanence value of 1.0 has the same effect
+					as a synapse with a permanence value at threshold but is not as easily 
+					forgotten. Using a scalar permanence value enables on-line learning in 
+					the presence of noise. A previously unseen input pattern could be noise
+					or it could be the start of a new trend that will repeat in the future.
+					By growing new synapses, the network can start to learn a new pattern 
+					when it is first encountered, but only act differently after several 
+					presentations of the new pattern. Increasing permanence beyond the 
+					threshold means that patterns experienced more than others will take 
+					longer to forget. <a href="#3">[3]</a>
+				</p>
 				<img src="images/technology/htm/synaptic_learning.png" alt="synaptic_learning" style="margin: 25px auto">
 				<p>
 					*Note: Numenta uses floating permanence values from 0.0 to 1.0.  I 
@@ -227,7 +244,6 @@
 				WIP
 			</p>
 		<h2>Layer 3b</h2>
-
 			<p>
 				In the human neocortex, layer 3b primarily contains pyramidal neurons.
 				In HTM, Layer 3b handles sequence memory which is the recognition and 
