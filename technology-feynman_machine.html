@@ -17,16 +17,87 @@
 				Systems Corp. <a href="#1">[1]</a>
 			</p>
 		<h2>Introduction</h2>
-		
+			<p>
+				The neocortex is a Universal Modeller of Dynamical Systems, in which each 
+				region learns to lock onto the dynamics of its inputs, characterise and 
+				represent their underlying causal parameters (along with their 
+				nonstationarity), and act on them through both feedback and behaviour. 
+				<a href="#3">[3]</a>
+				
+				hypothesis: the neocortex is a hierarchy-like network of interconnected and 
+				coupled regions, each of which is operating as a dynamical system modelling 
+				a dynamical system. <a href="#3">[3]</a>
+				
+				Our hypothesis is that the structure of a region of neocortex has evolved 
+				to use a time series of sensory (and sensorimotor) inputs to generate a 
+				dynamical analogue of the system generating the sensory inputs, to forecast 
+				its short-term future, to identify stable and slowly-changing 
+				characteristics of the system which indicate its hidden controlling 
+				parameters or state, to model the nonstationarity of the system state, and 
+				to interact with the system using time series of motor outputs. 
+				<a href="#3">[3]</a>
+			</p>
 		<h2>Applied Mathematics: Dynamical Systems</h2>
 			<p>
 				A Dynamical System is a mathematical model whose dynamics are characterised
 				by express update rules, typically differential equations in continuous 
-				systems, or difference equations in discrete time. <a href="#2">[2]</a>
+				systems, or difference equations in discrete time (Strogatz [2014]) 
+				<a href="#2">[2]</a>.
 			</p>
+			<p>
+				At any given time, a dynamical system has a state given by a set of real 
+				numbers (a vector) that can be represented by a point in an appropriate 
+				state space (a geometrical manifold). The evolution rule of the dynamical 
+				system is a function that describes what future states follow from the 
+				current state. Often the function is deterministic; in other words, for a 
+				given time interval only one future state follows from the current state;
+				however, some systems are stochastic, in that random events also affect 
+				the evolution of the state variables. <a href="#4">[4]</a>
+			</p>
+			<p>
+				With the advent of computers in the mid-20th century, researchers have been 
+				able to study the dynamics of nonlinear and complex systems, and since the
+				1960s this has become a primary focus of Applied Mathematics.
+				<a href="#3">[3]</a>
+			</p>
+			<h3>Chaos Theory</h3>
 			<h3>Takens Theorum</h3>
-		
-		<h2>Architecture</h2>
+				<p>
+					Takens [1981] and others showed that the dynamics of many real-world 
+					dynamical systems could be directly and accurately modelled based only 
+					on simply observing measurements of the real-world systems over time. 
+					
+					This mathematical property allows an agent to characterise an observed 
+					system and perform short-range forecasting of its future behaviour, 
+					without having access to the underlying causal mechanics or latent 
+					parameters of the system. <a href="#3">[3]</a>
+					
+					Floris Takens [1981], basing his study on results going back to Whitney 
+					[1936], proved that a system such as Lorenz’ could be reconstructed in 
+					all important details using only a time-series of a single measurement 
+					from the system. 
+				</p>
+			<h3>Lorenz System: An Example of a Chaotic Dynamical System and Takens Theorum</h3>
+				<p>
+					In 1963, Edward Lorenz developed a simplified mathematical model for 
+					atmospheric convection using 3 coupled differential equations.  It is 
+					notable for having chaotic solutions for certain parameter values and 
+					initial conditions.	<a href="#5">[5]</a>
+				</p>
+				<img src="images/technology/feynman_machine/lorenz_system.png" alt="lorenz_system" style="margin: 25px auto">
+				<p>Where:</p>
+				<ul style="list-style: none">
+					<li><b>M</b> is the manifold</li>
+					<li><b>x, y, z</b> make up the system states and are abstractions of the state of the convecting fluid</li>
+					<li><b>x</b> is proportional to the intensity of the convective motion</li>
+					<li><b>y</b> is proportional to the temperature difference of ascending and descending currents</li>
+					<li><b>z</b> is proportional to the departure of the vertical temperature profile from linearity</li>
+					<li><b>t</b> is time</li>
+					<li><b>&sigma;</b> is a system control parameter.  Lorenz used <b>&sigma;</b> = 10</li>
+					<li><b>&rho;</b> is a system control parameter.  Lorenz used <b>&rho;</b> = 28</li>
+					<li><b>&beta;</b> is a system control parameter.  Lorenz used <b>&beta;</b> = 8/3</li>
+				</ul>
+		<h2>Feynman Machine Architecture</h2>
 			<p>
 				A Feynman Machine is a collection of Dynamical Systems modules called 
 				regions, connected together in a network or hierarchy, and to its external 
@@ -49,7 +120,22 @@
 				&nbsp; Eric Laukien, Richard Crowder, and Fergal Byrne. Feynman Machine: 
 				The Universal Dynamical Systems Computer, 2016.
 			</p>
+			<p><a name="3">[3]</a>
+				&nbsp; <a href="https://arxiv.org/abs/1512.05245">link</a>
+				&nbsp; Fergal Byrne. Symphony from Synapses: Neocortex as a Universal 
+				Dynamical Systems Modeller using Hierarchical Temporal Memory, 2015.
+			</p>
+			<p><a name="4">[4]</a>
+				&nbsp; <a href="https://en.wikipedia.org/wiki/Dynamical_system">link</a>
+				&nbsp; Dynamical System Wikipedia.
+			</p>	
+			<p><a name="5">[5]</a>
+				&nbsp; <a href="https://en.wikipedia.org/wiki/Lorenz_system">link</a>
+				&nbsp; Lorenz System Wikipedia.
+			</p>	
+			
 			<p>WIP:</p>
+			<p>https://www.youtube.com/watch?v=6i57udsPKms&ab_channel=FrancisVillatoro</p>
 			<p>https://discourse.numenta.org/t/1609-03971-feynman-machine-the-universal-dynamical-systems-computer/1398</p>
 		<p>Page update: 2016-10-09</p>
 	</div>
