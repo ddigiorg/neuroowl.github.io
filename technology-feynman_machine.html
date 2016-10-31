@@ -64,62 +64,22 @@
 					(Strogatz [2014]) <a href="#2">[2]</a>.
 				</p>
 				<p>
-					At any given time, a dynamical system has a state given by a set of real
-					numbers (a vector) that can be represented by a point in an appropriate 
-					state space (a geometrical manifold). The evolution rule of the 
-					dynamical system is a function that describes what future states follow from the 
-					current state. Often the function is deterministic; in other words, for a 
-					given time interval only one future state follows from the current state;
-					however, some systems are stochastic, in that random events also affect 
-					the evolution of the state variables. <a href="#4">[4]</a>
+					In dynamical systems, causally interacting variables (say x, y and z) 
+					share a trajectory in the state space (a geometrical manifold) 
+					<a href="#7">[7]</a>.  At any given time, a dynamical system has a state 
+					given by a set of real numbers(a vector) that can be represented by a 
+					point in an appropriate state space  <a href="#4">[4]</a>.  An attractor 
+					is a set of numerical values toward which a system tends to evolve, for a
+					wide variety of starting conditions of the system.
 				</p>
-			<h3>Chaos Theory</h3>
-				<p>
-					Chaos theory is the field of study in mathematics that studies the 
-					behavior of dynamical systems that are highly sensitive to initial 
-					conditions which yield widely diverging outcomes for the system.
-					<a href="#5">[5]</a>
-				</p>
-			<h3>Takens Theorum</h3>
-				<p>
-					Floris Takens [1981], basing his study on results going back to Whitney 
-					[1936], proved that a system could be reconstructed in all important 
-					details using only a time-series of a single measurement from the 
-					system or in other words by simply observing measurements of the 
-					real-world systems over time. <a href="#3">[3]</a>
-				</p>
-				<p align="center", style="font-size: 20px">
-					&Phi; = ( x(t), x(t-&tau;), x(t-2&tau;), ... x(t-k&tau;) ) of k > 2m + 1
-					observed values x
-				</p>
-				<p>Where:</p>
-				<ul style="list-style: none">
-					<li><b>&Phi;</b> is the vector of time-delayed measurements</li>
-					<li><b>x</b> is the observed value at a certain time</li>
-					<li><b>t</b> is time</li>
-					<li><b>&tau;</b> is time delay</li>
-					<li><b>m</b> is manifold dimension</li>
-				</ul>
-				<p>
-					This mathematical property allows an agent to characterise an observed 
-					system and perform short-range forecasting of its future behaviour, 
-					without having access to the underlying causal mechanics or latent 
-					parameters of the system. <a href="#3">[3]</a>
-				</p>
-				<p>
-					ADD CRITICAL CONCLUSIONS OF THE THEORUM: ITS ESSENTIALLY THE SAME AS THE ORIGINAL OBSERVATION
-				</p>
-			<h3>Lorenz System: An Example of a Chaotic Dynamical System and Takens Theorum</h3>
+				<img src="images/technology/feynman_machine/fig1.png" alt="fig1" style="margin: 25px auto">
 				<p>
 					In 1963, Edward Lorenz developed a simplified mathematical model for 
 					atmospheric convection using 3 coupled differential equations.  It is 
 					notable for having chaotic solutions for certain parameter values and 
 					initial conditions.	<a href="#6">[6]</a>
 				</p>
-				<img src="images/technology/feynman_machine/lorenz_system.png" alt="lorenz_system" style="margin: 25px auto">
-				<p>Where:</p>
 				<ul style="list-style: none">
-					<li><b>M</b> is the manifold of 3 dimensions</li>
 					<li><b>x, y, z</b> make up the system states and are abstractions of the state of the convecting fluid</li>
 					<li><b>x</b> is proportional to the intensity of the convective motion</li>
 					<li><b>y</b> is proportional to the temperature difference of ascending and descending currents</li>
@@ -129,6 +89,56 @@
 					<li><b>&rho;</b> is a system control parameter.  Lorenz used <b>&rho;</b> = 28</li>
 					<li><b>&beta;</b> is a system control parameter.  Lorenz used <b>&beta;</b> = 8/3</li>
 				</ul>
+				<p>					
+					The evolution rule of the 
+					dynamical system is a function that describes what future states follow from the 
+					current state. Often the function is deterministic; in other words, for a 
+					given time interval only one future state follows from the current state;
+					however, some systems are stochastic, in that random events also affect 
+					the evolution of the state variables. <a href="#4">[4]</a>
+				</p>
+				<p>
+			<h3>Chaos Theory</h3>
+				<p>
+					Chaos theory is the field of study in mathematics that studies the 
+					behavior of dynamical systems that are highly sensitive to initial 
+					conditions which yield widely diverging outcomes for the system.
+					<a href="#5">[5]</a>
+				</p>
+			<h3>Takens Embedding Theorum</h3>
+				<p>
+					Floris Takens [1981], basing his study on results going back to Whitney 
+					[1936], proved that a system could be reconstructed (or embedded) in all
+					important details using only a time-series of a single measurement from 
+					the system, or in other words by simply observing measurements of the 
+					real-world systems over time <a href="#3">[3]</a>.  Takens' theorum
+					is also refered to as a delay embedding theorum.
+				</p>
+				<p align="center", style="font-size: 20px">
+					&Phi; = ( x(t), x(t-&tau;), x(t-2&tau;), ... x(t-k&tau;) ) of k > 2m + 1
+					observed values x
+				</p>
+				<ul style="list-style: none">
+					<li><b>&Phi;</b> is the vector of time-delayed measurements</li>
+					<li><b>x</b> is the observed value at a certain time</li>
+					<li><b>t</b> is time</li>
+					<li><b>&tau;</b> is time delay</li>
+					<li><b>m</b> is manifold dimension</li>
+					<li><b>k</b> is the embedding dimension or number of measured points</li>
+				</ul>
+				<img src="images/technology/feynman_machine/fig2.png" alt="fig2" style="margin: 25px auto">
+				<p>
+					The embedding model reconstructed from the time series observation is to 
+					practically the same thing as the system being observed.  Although the
+					reconstruction is not visually identical to the original system, it is
+					topologically identical, or diffeomorphic.
+				</p>
+				<p>
+					This mathematical property allows an agent to characterise an observed 
+					system and perform short-range forecasting of its future behaviour, 
+					without having access to the underlying causal mechanics or latent 
+					parameters of the system. <a href="#3">[3]</a>
+				</p>
 			<h3>Learning to Predict using Reconstruction</h3>
 				<p>
 					WIP
@@ -193,7 +203,13 @@
 			<p><a name="6">[6]</a>
 				&nbsp; <a href="https://en.wikipedia.org/wiki/Lorenz_system">link</a>
 				&nbsp; Lorenz System Wikipedia.
-			</p>	
+			</p>
+			<p><a name="6">[7]</a>
+				&nbsp; <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004537">link</a>
+				&nbsp; Satohiro Tajima, Toru Yanagawa, Naotaka Fujii, Taro Toyoizumi:
+				Untangling Brain-Wide Dynamics in Consciousness by Cross-Embedding, 2015.
+			</p>
+			
 			
 			<p>WIP:</p>
 			<p>https://www.youtube.com/watch?v=6i57udsPKms&ab_channel=FrancisVillatoro</p>
