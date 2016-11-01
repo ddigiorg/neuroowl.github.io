@@ -56,9 +56,6 @@
 				</li>
 			</ul>
 		<h2>Applied Mathematics</h2>
-			<div class="center">
-				<iframe src="https://www.youtube.com/embed/fevurdpiRYg" allowfullscreen></iframe>
-			</div>
 			<h3>Dynamical Systems</h3>
 				<p>
 					A Dynamical System is a mathematical model whose dynamics are 
@@ -74,20 +71,21 @@
 					
 					
 					In dynamical systems, causally interacting variables (say x, y and z) 
-					share a trajectory in the state/phase space (a geometrical manifold) 
-					<a href="#7">[7]</a>.  At any given time, a dynamical system has a state 
-					given by a set of real numbers(a vector) that can be represented by a 
-					point in an appropriate state space  <a href="#4">[4]</a>.  An attractor 
-					is a set of numerical values toward which a system tends to evolve, for a
-					wide variety of starting conditions of the system.
-				</p>
-				<img src="images/technology/feynman_machine/fig1.png" alt="fig1" style="margin: 25px auto">
+					share a trajectory in the state/phase space (a geometrical manifold).  At
+					any given time, a dynamical system has a state given by a set of real 
+					numbers(a vector) that can be represented by a point in an appropriate 
+					state space  <a href="#4">[4]</a>.  An attractor is a set of numerical 
+					values toward which a system tends to evolve, for a	wide variety of 
+					starting conditions of the system.
+				</p>		
 				<p>
 					In 1963, Edward Lorenz developed a simplified mathematical model for 
 					atmospheric convection using 3 coupled differential equations.  It is 
 					notable for having chaotic solutions for certain parameter values and 
 					initial conditions.	<a href="#6">[6]</a>
 				</p>
+				<div class="center"><iframe src="https://www.youtube.com/embed/fevurdpiRYg" allowfullscreen></iframe></div>
+				<img src="images/technology/feynman_machine/fig1.png" alt="fig1" style="margin: 25px auto">
 				<ul style="list-style: none">
 					<li><b>x, y, z</b> make up the system states and are abstractions of the state of the convecting fluid</li>
 					<li><b>x</b> is proportional to the intensity of the convective motion</li>
@@ -97,37 +95,25 @@
 					<li><b>&sigma;</b> is a system control parameter.  Lorenz used <b>&sigma;</b> = 10</li>
 					<li><b>&rho;</b> is a system control parameter.  Lorenz used <b>&rho;</b> = 28</li>
 					<li><b>&beta;</b> is a system control parameter.  Lorenz used <b>&beta;</b> = 8/3</li>
-				</ul>
-				<p>					
-					The evolution rule of the dynamical system is a function that describes 
-					what future states follow from the current state. Often the function is 
-					deterministic; in other words, for a given time interval only one future 
-					state follows from the current state; however, some systems are 
-					stochastic, in that random events also affect the evolution of the state 
-					variables. <a href="#4">[4]</a>
-				</p>
-				<p>
+				</ul>							
 			<h3>Chaos Theory</h3>
 				<p>
 					Chaos theory is the field of study in mathematics that studies the 
 					behavior of dynamical systems that are highly sensitive to initial 
 					conditions which yield widely diverging outcomes for the system
-					<a href="#5">[5]</a>.  The behavior of chaotic systems appears random
-					even though these systems are deterministic, meaning that their future
-					dynamics are fully defined by their initial conditions.
+					<a href="#5">[5]</a>.
 				</p>
 			<h3>Takens Embedding Theorum</h3>
 				<p>
-					Floris Takens [1981], basing his study on results going back to Whitney 
-					[1936], proved that a system could be reconstructed (or embedded) in all
-					important details using only a time-series of a single measurement from 
-					the system, or in other words by simply observing measurements of the 
-					real-world systems over time <a href="#3">[3]</a>.  Takens' theorum
-					is also refered to as a delay embedding theorum.
+					Takens Embedding Theorum (Takens 1981) builds upon Whitney Embedding 
+					Theorem (Whitney 1936) and shows that smoothly evolving dynamical systems
+					and their manifolds can be reconstructed in all important details by 
+					measuring time-series lags from a single state of the system 
+					<a href="#3">[3]</a>:
 				</p>
 				<p align="center", style="font-size: 20px">
-					&Phi; = ( x(t), x(t-&tau;), x(t-2&tau;), ... x(t-k&tau;) ) of k > 2m + 1
-					observed values x
+					&Phi; = [x(t), x(t - &tau;), x(t - 2&tau;), ..., x(t - k&tau;)] 
+					&nbsp; &nbsp; k > 2m + 1
 				</p>
 				<ul style="list-style: none">
 					<li><b>&Phi;</b> is the vector of time-delayed measurements</li>
@@ -135,31 +121,35 @@
 					<li><b>t</b> is time</li>
 					<li><b>&tau;</b> is time delay</li>
 					<li><b>m</b> is manifold dimension</li>
-					<li><b>k</b> is the embedding dimension or number of measured points</li>
+					<li><b>k</b> is the embedding dimension</li>
 				</ul>
+				<div class="center"><iframe src="https://www.youtube.com/embed/ctOseiJoRuI" allowfullscreen></iframe></div>
 				<img src="images/technology/feynman_machine/fig2.png" alt="fig2" style="margin: 25px auto">
 				<p>
-					The embedding model reconstructed from the time series observation is 
-					practically the same thing as the system being observed.  Although the
-					reconstruction is not visually identical to the original system, it is
-					topologically identical, or diffeomorphic.
+					Although the reconstruction is not visually identical to the original 
+					system, it is topologically identical and preserves essential 
+					mathematical properties of the original system:
 				</p>
-				<p>
-					This mathematical property allows an agent to characterise an observed 
-					system and perform short-range forecasting of its future behaviour, 
-					without having access to the underlying causal mechanics or latent 
-					parameters of the system. <a href="#3">[3]</a>
-				</p>
-			<h3>Diffeomorphism</h3>
-				<p>
-					A diffeomorphism is an isomorphism of smooth manifolds. It is an 
-					invertible function that maps one differentiable manifold to another such 
-					that both the function and its inverse are smooth. [diffeomorphism wiki]
-				</p>
+				<ul>
+					<li> 
+						<b>Diffeomorphism</b>: A diffeomorphism is an isomorphism of smooth 
+						manifolds. It is an invertible function that maps one differentiable 
+						manifold to another such that both the function and its inverse are 
+						smooth <a href="#7">[7]</a>.  It is just a particularly user-friendly 
+						function, which allows you to take a problem in one space, solve it 
+						some "easier" space, and translate your solution back to the 
+						"difficult" space to apply it.
+					</li>
+					<li>
+						<b>Lyapunov exponents</b>
+					</li>
+				</ul>
+
 			<h3>Learning to Predict using Embedding Reconstruction</h3>
 				<p>
 					WIP
 				</p>
+				<div class="center"><iframe src="https://www.youtube.com/embed/iSttQwb-_5Y" allowfullscreen></iframe></div>
 		<h2>Feynman Machine Architecture</h2>
 			<img src="images/technology/feynman_machine/fig3.png" alt="fig3" style="margin: 25px auto">
 			<p>
@@ -222,10 +212,9 @@
 				&nbsp; <a href="https://en.wikipedia.org/wiki/Lorenz_system">link</a>
 				&nbsp; Lorenz System Wikipedia.
 			</p>
-			<p><a name="6">[7]</a>
-				&nbsp; <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004537">link</a>
-				&nbsp; Satohiro Tajima, Toru Yanagawa, Naotaka Fujii, Taro Toyoizumi:
-				Untangling Brain-Wide Dynamics in Consciousness by Cross-Embedding, 2015.
+			<p><a name="7">[7]</a>
+				&nbsp; <a href="https://en.wikipedia.org/wiki/Diffeomorphism">link</a>
+				&nbsp; Diffeomorphism Wikipedia.
 			</p>
 			
 			

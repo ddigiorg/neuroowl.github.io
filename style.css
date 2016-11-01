@@ -19,6 +19,20 @@ h3 {
 	font-size: 18px;
 }
 
+#text {
+	margin: auto;
+	padding: 40px 10px;
+	/*width: 50%;*/
+	max-width: 840px;
+	height: auto;
+	background-color: #FFFFFF;
+}
+
+#text img {
+	display: block;
+	margin: auto;
+}
+
 #navbar ul {
     background-color: #000000;
 	list-style-type: none;
@@ -93,19 +107,6 @@ h3 {
 	color: #000000;
 	/*background-color: #B2EBF2;*/
     background-color: #00FFFF;
-}
-
-#text {
-	margin: auto;
-	padding: 40px 10px;
-	width: 50%;
-	height: auto;
-	background-color: #FFFFFF;
-}
-
-#text img {
-	display: block;
-	margin: auto;
 }
 
 /*Youtube video wrapper*/
