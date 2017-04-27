@@ -40,6 +40,19 @@
 	font-size: 18px;
 }
 
+.center
+{
+	text-align: center
+}
+
+/*Youtube video display settings*/
+.center iframe
+{
+	width: 400px;
+	height: 300px;
+	border: none;
+}
+
 .navbar-core
 {
 	background-color: #000000;
@@ -141,18 +154,4 @@
 
 .toggle-box:checked + label:before {
   content: "\25BC";
-}
-
-/*Youtube video wrapper*/
-.center
-{
-	text-align: center
-}
-
-/*Youtube video display settings*/
-.center iframe
-{
-	width: 400px;
-	height: 300px;
-	border: none;
 }
