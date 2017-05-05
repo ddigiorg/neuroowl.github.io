@@ -15,14 +15,13 @@
 	<h4>Contact Information</h4>
 	<div>Email: ddigiorg@gmail.com</div>
 	<div>Github: <a href="https://github.com/ddigiorg">https://github.com/ddigiorg</a></div>
-
-	<h4>Description</h4>
-	<p>Below is a curriculum vitae of my work.  Each item appears chronologically (bottom earliest, top latest) and has an associated tag indicating what type of work the section entails.  Each section includes items describing the work performed where details like dates, skills, project links, summaries, photos, videos, results, and a list of future improvements may be found.</p>
+	<h4>ABOUT ME</h4>
+	<p>WIP</p>
 <!-- -->
 	<h4 style="text-align: center">PROJECTS</h4>
 <!-- -->
 	<input class="toggle-box" id="P9" type="checkbox" >
-	<label for="P9"><p><b>HTM IMPLEMENTATION (WIP)</b><span style="float:right;">May 2017 - </span></p></label>
+	<label for="P9"><p><b>HTM IMPLEMENTATION</b><span style="float:right;">May 2017 - </span></p></label>
 	<div style="margin: 0px 30px">
 		WIP
 	</div>
@@ -30,66 +29,56 @@
 	<input class="toggle-box" id="P8" type="checkbox" >
 	<label for="P8"><p><b>PATTERN & SEQUENCE MEMORY</b><span style="float:right;">Feb 2017 - </span></p></label>
 	<div style="margin: 0px 30px">
-		<div>Dates: 2017</div> 
-		<div>Skills: C++, OpenCL</div>
-		<div>Project Repo: <a href="https://github.com/ddigiorg/pattern-sequence-predictor">https://github.com/ddigiorg/pattern-sequence-predictor</a></div>
-
-		WIP
-
+		<ul>
+		<li>WIP</li>
+		</ul>
+		<div>Project Link: <a href="https://github.com/ddigiorg/pattern-sequence-predictor">https://github.com/ddigiorg/pattern-sequence-predictor</a></div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P7" type="checkbox" >
 	<label for="P7"><p><b>COMPUTE RENDER ENGINE</b><span style="float:right;">Dec 2016 - Feb 2017</span></p></label>
 	<div style="margin: 0px 30px">
-		<div>Dates: 2017</div> 
-		<div>Skills: C++, OpenCL, OpenGL, OpenCV, SFML</div>
-		<div>Project Repo: <a href="https://github.com/ddigiorg/compute-render-engine">https://github.com/ddigiorg/compute-render-engine</a></div>
-		<p>Compute Render Engine (CRE) uses OpenCL and OpenGL interoperability to provide shared data buffers for computation and visualization. Its purpose is to provide a framework for users who wish to see dynamically changing data on a parallel device (like a GPU) without the added cost of seperate computation and visualization stages. Additionally, CRE uses SFML for OpenGL window context creation and OpenCV for inputting video files.  CRE works on Linux and Windows.</p>
-		<p>I wrote CRE to learn OpenCL and OpenGL development using C++.  Here are two demos showing the engine in action:</p>
-		<h4>Demo: Particles</h4>
-		<div class="center"><iframe src="https://www.youtube.com/embed/jjvSq6iag0k" allowfullscreen></iframe></div>
-		<p>The particles demo creates an OpenGL vertex buffer object (VBO) of particle positions which gets shared with an OpenCL kernel.  The OpenCL kernel uses Neutonian physics equations to calculate the position and velocity of each particle relative to a point gravity provided by a mouse click.  OpenGL handles the color VBO.  The demo shows 4 million particles at ~60fps on the GeForce GTX 750 Ti graphics card.  The highest number of particles the  GeForce GTX 750 Ti can handle before dipping under 60fps is 8 million particles.  The demos was also run on a GeForce GTX 1070 with a limit of 27 million particles before dipping under 60fps.</p>
-		<h4>Demo: Retina</h4>
-		<div class="center"><iframe src="https://www.youtube.com/embed/MzjDUMFdF1E" allowfullscreen></iframe></div>	
-		<p>The retina demo creates two OpenGL 2D texture objects shared with an OpenCL kernel: one texture for video pixel data and the other for edge detection data.  Pixel data of the input video is read via OpenCV and copied to the OpenGL/CL texture object.  The OpenCL kernel then uses the center-surround response pattern of retinal ganglion cells to provide edge detection.  Pixels are made monochromatic before retinal processing, therefore the algorithm only considers light-dark contrast and not the color contrast of opponent-color theory.</p>
 		<ul>
-			<li>Red is high ganglion cell response (center pixel is light, surround pixels are dark)</li>
-			<li>Green is low ganglion cell response (center pixel is dark, surround pixels are light)</li>
-			<li>Black is steady-state response (center pixel is light, surround pixels are light OR center pixel is dark, surround pixels are dark)</li>
+		<li>C++ parallel processing engine implementation using OpenCL OpenGL interoperability and SFML window context creation</li>
+		<li>OpenCV for inputting images and video streams</li>
+		<li>Linux and Windows capabilities with installation notes</li>
+		<li>Demo calculating and displaying Newtonian physics properties for millions of particles</li>
+		<li>Demo calculating and displaying retinal ganglion cell center-surround processing on image streams</li>
 		</ul>
-		<h4>Future Improvements:</h4>
-		<ul>
-			<li>OSX support</li>
-			<li>Moveable OpenGL view camera</li>
-			<li>3D demo</li>
-			<li>Add color opponent theory to retina demo</li>
-		</ul>
+		<div>Project Link: <a href="https://github.com/ddigiorg/compute-render-engine">https://github.com/ddigiorg/compute-render-engine</a></div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P6" type="checkbox" >
 	<label for="P6"><p><b>NEUROOWL WEBSITE</b><span style="float:right;">Nov 2016 - Today</span></p></label>
 	<div style="margin: 0px 30px">
-		<div>Dates: 2017</div> 
-		<div>Skills: Web Design, HTML5, CSS, Javascript, Documentation</div>
-		<div>Project Repo: <a href="https://github.com/ddigiorg/neuroowl.github.io">https://github.com/ddigiorg/neuroowl.github.io</a></div>
-		<p>I created neuroowl.com to be my repository of evolving notes about my journey into understanding artificial intelligence and on the quest to AGI.  Therefore, this website is kind of like a sort of personal journal or blog to keep the ideas, often complex and difficult to comprehend, I experience and learn concrete.  Additionally, I also wanted to learn some web design by implementing and designing the website on my own.</p>
-		<h4>Future Improvements:</h4>
 		<ul>
-			<li>Need to figure out workaround for browser caching</li>
-			<li>Add "expand all" and "collapse all" capabilities</li>
+		<li>Web development using HTML5, CSS, and Javascript</li>
+		<li>Organization and documentation of ideas and notes related to artificial intelligence</li>
+		<li>Image graphics and embedded video capability</li>
 		</ul>
+		<div>Project Link: <a href="https://github.com/ddigiorg/neuroowl.github.io">https://github.com/ddigiorg/neuroowl.github.io</a></div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P5" type="checkbox" >
 	<label for="P5"><p><b>TENSORFLOW CNN FOR MNIST</b><span style="float:right;">DATES</span></p></label>
 	<div style="margin: 0px 30px">
-		WIP
+		<ul>
+		<li>GPU parallelization implementation of Artificial Neural Networks (ANNs) using Python and Google TensorFlow</li>
+		<li>Two layer Convolutional Neural Network (CNN) for MNIST dataset</li>
+		<li>Knowledge of ANNs and deep learning</li>
+		<li>Helpful Archlinux installation notes used by the arch community</li>
+		</ul>
+		<div>Project Link: ADD LINK</div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P4" type="checkbox" >
 	<label for="P4"><p><b>PYTHON OPENGL CUBES</b><span style="float:right;">DATES</span></p></label>
 	<div style="margin: 0px 30px">
-		WIP
+		<ul>
+		<li>Python OpenGL implementation of 3D array of cubes</li>
+		<li>Intended for visualization of changing neuron states in Machine Learning projects</li>
+		</ul>
+		<div>Project Link: ADD LINK</div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P3" type="checkbox" >
@@ -101,19 +90,13 @@
 	<input class="toggle-box" id="P2" type="checkbox" >
 	<label for="P2"><p><b>TYR - 3D PRINTED ROBOTIC HAND</b><span style="float:right;">DATES</span></p></label>
 	<div style="margin: 0px 30px">
-		<div>Dates: 2014 - 2016</div>
-		<div>Skills: Robotics, 3D Printing, Solidworks, Embedded Systems, Eagle CAD for PCB design, Python, Raspberry Pi, Electronics </div>
-		<div>Project Repo: NEED TO UPLOAD PROJECT REPO</div>
-
-		<img src="\webpages\about\me\tyr-hand.png" alt="david" style="margin: 25px auto">
-
-		<p>Tyr is a 3D printed robotic hand designed to be as cheap and as anthropomorphic as possible.  It has 23 degrees of freedom, is motor-tendon driven with 19 degrees of actuation, and provides localized angular position sensing via rotational potentiometers.  Tyr is designed in Solidworks, fabricated using personal PrintrBot Jr. 3D printer, and programmed in Python using a Raspberry Pi, an ARM based mini-computer using Linux.</p>
-
-		<p>The goal of the robotic hand project was to vastly improve my technical engineering capabilities in the field of human-like robotics and prosthetics.  This ambitious personal project was a 2-year goal from the perspective of a recent Electrical Engineering graduate to research, design, fabricate, program, and document all technical aspects: mechanical, electrical, and software that goes into fabricating an inexpensive, anthropomorphic robotic hand.  This endeavor also includes learning and mastering the processes and tools necessary to complete the hand and get out of my technical comfort zone.</p>
-
-		<img src="\webpages\about\me\tyr-model-hand.png" alt="david" style="margin: 25px auto">
-		<img src="\webpages\about\me\tyr-model-finger.png" alt="david" style="margin: 25px auto">
-		<img src="\webpages\about\me\tyr-electronics.png" alt="david" style="margin: 25px auto">
+		<ul>
+		<li>3D printed robotic hand with 23 degrees of freedom and 19 degrees of actuation</li>
+		<li>Designed linear-motor and tendon drive system with local angular position sensing capabilities on the hand</li>
+		<li>Modeled using Solidworks and printed on personal PrintrBot Jr.</li>
+		<li>Embedded systems experience using Eagle CAD for PCB design and coded using Python on Raspberry Pi</li>
+		</ul>
+		<div>Project Link: ADD LINK</div>
 	</div>
 <!-- -->
 	<input class="toggle-box" id="P1" type="checkbox" >
@@ -127,9 +110,7 @@
 	<input class="toggle-box" id="W2" type="checkbox" >
 	<label for="W2"><p><b>PROJECT MANAGER</b><span style="float:right;">July 2015 - Sept 2016</span></p></label>
 	<div style="margin: 0px 30px">
-		The Boeing Company
-		<div>Skills: Project & Team Management, Customor & Supplier Engagement</div>
-
+		<p>The Boeing Company<span style="float:right;">El Segundo, CA</span></p>
 		<ul>
 			<li>Delivered a $1 million solution from the projected $2 million antenna test hardware for multiple satellite programs</li>
 			<li>Engaged with leadership on aggressive schedule, cost reduction/estimates, and risk analysis</li>
@@ -142,9 +123,7 @@
 	<input class="toggle-box" id="W1" type="checkbox" >
 	<label for="W1"><p><b>ELECTROPHYSICS ENGINEER</b><span style="float:right;">July 2013 - June 2015</span></p></label>
 	<div style="margin: 0px 30px">
-		The Boeing Company
-		<div>Skills: Electromagnetic Design, Mechatronics, Labview, Matlab, Visual Basic, Test Procedures, Documentation</div>
-
+		<p>The Boeing Company<span style="float:right;">El Segundo, CA</span></p>
 		<ul>
 			<li>With a team of engineers, greatly reduced cost and cycle time by upgrading a 7-axis autonomous testing equipment</li>
 			<li>With a team of engineers, accelerated delivery by providing accurate and comprehensive antenna data quickly and under budget</li>
@@ -164,7 +143,7 @@
 	<input class="toggle-box" id="E1" type="checkbox" >
 	<label for="E1"><p><b>B.S. ELECTRICAL ENGINEERING</b><span style="float:right;">Aug 2009 - May 2013</span></p></label>
 	<div style="margin: 0px 30px">
-		Virginia Tech
+		<p>Virginia Tech<span style="float:right;">Blacksburg, VA</span></p>
 		WIP
 	</div>
 <!-- -->
