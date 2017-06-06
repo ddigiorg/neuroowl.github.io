@@ -34,12 +34,24 @@
 		<li><b>On-line Learning</b> - </li>
 		<li><b>Unsupervised</b> - </li>
 	</ul>
-		
+
+	<h2>Terms</h2>
+	pre-synaptic
+	post-synaptic
+	connected
+	unconnected
+	used
+	unused
+	active
+	predict
+
 	<h2>Architecture</h2>
 
 	<h3>Regions</h3>
 
 	<h3>Columns</h3>
+
+	Overlap
 
 	<h3>Cells</h3>
 
@@ -65,21 +77,31 @@
 		<li><b>Permanence</b> - Synaptic permanence shows how connected a synapse is to the axon it grows towards.  Each synapse has a threshold value.  If the permanence is above the threshold the synapse is connected to the
 		axon.  If the permanence is below the threshold the synapse is not connected to the axon.</li>
 	</ul>
-		
+
 	<h2>Algorithms</h2>
 
 	<h3>Synaptic Learning</h3>
 
 	<p>
-	HTM Synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 while the graphics display integer values from 0 to 99 for aesthetic 
+	HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 while the graphics display integer values from 0 to 99 for aesthetic 
 	purposes.  The rules are the same regardless of the data type.
 	</p>
 
+	<h4>Initialization</h4>
+
+	<p>Synapse addresses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
+
 	<h4>Increment Permanence</h4>
+
+	<p>If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</p>
 
 	<h4>Decrement Permanence</h4>
 
+	<p>If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</p>
+
 	<h4>Adapt Synapse</h4>
+
+	<p>If the synapse permanence is 0, then assign the synapse address to an unused post-synaptic cell and set the permanence just below the threshold.</p>
 
 	<h4>Insert Synapse</h4>
 
@@ -90,6 +112,8 @@
 	<img src="/webpages/technology/htm/sp.gif" alt="sp" style="margin: 25px auto">
 
 	<h4>Overlap</h4>
+
+	<p>If the synapse is connected (permanence is above threshold) and the post-synaptic cell is active, increment the column's overlap.</p>
 
 	<h4>Inhibition</h4>
 
