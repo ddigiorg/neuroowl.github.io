@@ -12,14 +12,14 @@
 <div class="text">
 	<h1>Hierarchical Temporal Memory</h1>
 
-	<p>Hierarchical Temporal Memory (HTM) is a theoretical framework of the neocortex for both biological and machine intelligence under development by Numenta <a href="#1">[1]</a>.</p>
+	<p>Hierarchical Temporal Memory (HTM) is a theoretical framework of the neocortex for both biological and machine intelligence under development by <a href="http://numenta.com/">Numenta</a>.</p>
 	
 	<h2>Introduction</h2>
 	
 	<p>
 	The goal of building intelligent machines is not to replicate human	behavior, nor to build a brain, nor to create machines to do what humans do.  The goal of building intelligent machines is to create machines that work on
 	the same principles as the brain -- machines that are able to learn, discover, and adapt in ways that computers can't and brains can.  HTM is a	theory of the neocortex and a few related brain structures; it is not an
-	attempt to model or understand every part of the human brain. <a href="#2">[2]</a>
+	attempt to model or understand every part of the human brain. <sup><a href="#1">[1]</a></sup>
 	</p>
 		
 	<h2>HTM Principles</h2>
@@ -37,24 +37,53 @@
 		
 	<h2>Architecture</h2>
 
-	<h3>Synapses</h3>
+	<h3>Regions</h3>
 
-	Address
-	Permanence
+	<h3>Columns</h3>
+
+	<h3>Cells</h3>
 
 	<h3>Dendrite Segments</h3>
+
+	<p>
+		Each dendrite segment has synapses.  For a neuron to recognize a pattern of activity it requires a set of co-located synapses (typically 15-20) that connect to a subset of the cells that are active in the pattern to be
+		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment. <a href="#2">[2]</a>
+	</p>
+
+	<p>A HTM cell has three types of dendrite segments:</p>
 
 	Proximal
 	Distal
 	Apical
 
-	<h3>Cells</h3>
+	<h3>Synapses</h3>
 
-	<h3>Columns</h3>
+	<p>Synapses form the fundamental memory storage of the neocortex.  HTM has two synaptic properties:</p>
 
-	<h3>Regions</h3>
-
+	<ul>
+		<li><b>Address</b> - Every synapse grows towards an axon, or cell output.  The address </li>
+		<li><b>Permanence</b> - Synaptic permanence shows how connected a synapse is to the axon it grows towards.  Each synapse has a threshold value.  If the permanence is above the threshold the synapse is connected to the
+		axon.  If the permanence is below the threshold the synapse is not connected to the axon.</li>
+	</ul>
+		
 	<h2>Algorithms</h2>
+
+	<h3>Synaptic Learning</h3>
+
+	<p>
+	HTM Synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 while the graphics display integer values from 0 to 99 for aesthetic 
+	purposes.  The rules are the same regardless of the data type.
+	</p>
+
+	<h4>Increment Permanence</h4>
+
+	<h4>Decrement Permanence</h4>
+
+	<h4>Adapt Synapse</h4>
+
+	<h4>Insert Synapse</h4>
+
+	<h4>Cull Synapse</h4>
 
 	<h3>Spatial Pooling</h3>
 
@@ -76,18 +105,7 @@
 
 	<h4>Learning</h4>
 	
-
-
-		<h3>Synaptic Learning</h3>
-		<p>
-			Each dendrite segment has synapses, which form the fundamental memory
-			storage of the neocortex.  For a neuron to recognize a pattern of
-			activity it requires a set of co-located synapses (typically 15-20)
-			that connect to a subset of the cells that are active in the pattern to
-			be recognized. Learning to recognize a new pattern is accomplished by
-			the formation of a set of new synapses collocated on a dendritic
-			segment. <a href="#3">[3]</a>
-		</p>
+	
 		<p>
 			The permanence value is incremented and decremented using a Hebbian-like
 			rule. If the permanence value exceeds a threshold, such as 0.3, then
@@ -103,44 +121,35 @@
 			when it is first encountered, but only act differently after several
 			presentations of the new pattern. Increasing permanence beyond the
 			threshold means that patterns experienced more than others will take
-			longer to forget. <a href="#3">[3]</a>
+			longer to forget. <a href="#2">[2]</a>
 		</p>
 		
-		<p>
-			*Note: Numenta uses floating permanence values from 0.0 to 1.0.  I
-			prefer to use int8 values from 0 to 99, which is why the figures above
-			display integer permanence values.
-		</p>
+
 		
 		<h2>References</h2>
 		<p>
 			<a name="1">[1]</a>
-			&nbsp; <a href="http://numenta.com/">link</a>
-			&nbsp; Numenta.
-		</p>
-		<p>
-			<a name="2">[2]</a>
 			&nbsp; <a href="http://numenta.com/biological-and-machine-intelligence/">link</a>
 			&nbsp; Jeff Hawkins et al. Biological and Machine Intelligence, 2016.
 		</p>
 		<p>
-			<a name="3">[3]</a>
+			<a name="2">[2]</a>
 			&nbsp; <a href="http://journal.frontiersin.org/article/10.3389/fncir.2016.00023/full">link</a>
 			&nbsp; Jeff Hawkins Subutai Ahmad. Why Neurons Have Thousands of Synapses a
 			Theory of Sequence Memory in Neocortex, 2016.
 		</p>
 		<p>
-			<a name="4">[4]</a>
+			<a name="3">[3]</a>
 			&nbsp; <a href="https://github.com/numenta/nupic.research/blob/master/docs/bibliography/htm_bibliography.pdf">link</a>
 			&nbsp; Subutai Ahmad and Yuwei Chu. Annotated Bibliography for HTM Researchers, 2016.
 		</p>
 		<p>
-			<a name="5">[5]</a>
+			<a name="4">[4]</a>
 			&nbsp; <a href="https://arxiv.org/abs/1512.05463">link</a>
 			&nbsp; Yuwei Cui, Subutai Ahmad and Jeff Hawkins. Continuous Online Sequence Learning with an Unsupervised Neural Network Model, 2015.
 		</p>
 		<p>
-			<a name="6">[6]</a>
+			<a name="5">[5]</a>
 			&nbsp; <a href="https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697">link</a>
 			&nbsp; Numenta Forum. Preliminary details about new theory work on sensory-motor inference, 2016.
 		</p>
