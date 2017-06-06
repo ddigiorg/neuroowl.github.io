@@ -17,51 +17,51 @@
 	<h2>Introduction</h2>
 	
 	<p>
-	The goal of building intelligent machines is not to replicate human	behavior, nor to build a brain, nor to create machines to do what humans do.  The goal of building intelligent machines is to create machines that work on
-	the same principles as the brain -- machines that are able to learn, discover, and adapt in ways that computers can't and brains can.  HTM is a	theory of the neocortex and a few related brain structures; it is not an
-	attempt to model or understand every part of the human brain. <sup><a href="#1">[1]</a></sup>
+	"The goal of building intelligent machines is not to replicate human behavior, nor to build a brain, nor to create machines to do what humans do.  The goal of building intelligent machines is to create machines that work on
+	the same principles as the brain -- machines that are able to learn, discover, and adapt in ways that computers can't and brains can.  HTM is a	theory of the neocortex and a few related brain structures; it is not an 
+	attempt to model or understand every part of the human brain." <sup><a href="#1">[1]</a></sup>
 	</p>
 		
 	<h2>HTM Principles</h2>
 
 	<input class="toggle-box" id="p0" type="checkbox">
-	<label for="p0"><b>Common Algorithms in Regions</b></label>
+	<label for="p0"><h3>Common Algorithms in Regions</h3></label>
 	<div>
 		Every region of the neocortex performs the same set of memory and algorithmic functions, regardless of processing vision, hearing, touch, language, etc.
 	</div>
 
 	<input class="toggle-box" id="p1" type="checkbox">
-	<label for="p1"><b>Hierarchy of Regions</b></label>
+	<label for="p1"><h3>Hierarchy of Regions</h3></label>
 	<div>
 		Neocortex organizes regions in a hierarchy.
 	</div>
 
 	<input class="toggle-box" id="p2" type="checkbox">
-	<label for="p2"><b>Sparse Distributed Representations (SDRs)</b></label>
+	<label for="p2"><h3>Sparse Distributed Representations (SDRs)</h3></label>
 	<div>
 		Only a small percentage of a population of neurons are active at one time.  Symantic similarity.
 	</div>
 
 	<input class="toggle-box" id="p3" type="checkbox">
-	<label for="p3"><b>Sensory Encoders</b></label>
+	<label for="p3"><h3>Sensory Encoders</h3></label>
 	<div>
 		Converts some type of data into an SDR to be processed by HTM algorithms.
 	</div>
 
 	<input class="toggle-box" id="p4" type="checkbox">
-	<label for="p4"><b>Sensory-Motor Systems</b></label>
+	<label for="p4"><h3>Sensory-Motor Systems</h3></label>
 	<div>
 		We can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.
 	</div>
 
 	<input class="toggle-box" id="p5" type="checkbox">
-	<label for="p5"><b>Streaming Data and Sequence Memory</b></label>
+	<label for="p5"><h3>Streaming Data and Sequence Memory</h3></label>
 	<div>
 
 	</div>
 
 	<input class="toggle-box" id="p6" type="checkbox">
-	<label for="p6"><b>On-line Unsupervised Learning</b></label>
+	<label for="p6"><h3>On-line Unsupervised Learning</h3></label>
 	<div>
 
 	</div>
@@ -77,14 +77,21 @@
 	<input class="toggle-box" id="ar1" type="checkbox">
 	<label for="ar1"><h3>Columns</h3></label>
 	<div>
+		<h4>Terms</h4>
+		
 		Overlap
+		Proximal
 	</div>
 
 	<input class="toggle-box" id="ar2" type="checkbox">
 	<label for="ar2"><h3>Cells</h3></label>
 	<div>
-		active
-		predict
+
+		<h4>Terms</h4>
+
+		active - a cell in an active state, or outputting action potentials, represents a recognized feed-forward pattern in the context of a SDR of previous cell activations.
+		predict - a cell in a predict state, or depolarized, represents the potential occourance at the next timestep of a feed-forward pattern in the context of cell activations at the current timestep.
+		winner - 
 	</div>
 
 	<input class="toggle-box" id="ar3" type="checkbox">
@@ -97,7 +104,9 @@
 
 		<p>A HTM cell has three types of dendrite segments:</p>
 
-		Proximal
+		<h4>Terms</h4>
+				
+		Basal
 		Distal
 		Apical
 	</div>
@@ -105,7 +114,7 @@
 	<input class="toggle-box" id="ar4" type="checkbox">
 	<label for="ar4"><h3>Synapses</h3></label>
 	<div>
-		<p>Synapses form the fundamental memory storage of the neocortex.  HTM has two synaptic properties:</p>
+		<p>Synapses form the fundamental memory storage of the neocortex.</p>
 
 		A synapse with a permanence value of 1.0 has the same effect as a synapse with a permanence value at threshold but is not as easily	forgotten.
 
@@ -121,17 +130,12 @@
 		<h4>Terms</h4>
 
 		<ul>
-			<li><b>address</b> - Every synapse grows towards an axon, or cell output.  The address </li>
-			<li><b>permanence</b> - Synaptic permanence shows how connected a synapse is to the axon it grows towards.  Each synapse has a threshold value.  If the permanence is above the threshold the synapse is connected to the
-				axon.  If the permanence is below the threshold the synapse is not connected to the axon.
-			</li>
-			threshold - represents the establishment of a synapse, albeit one that could easily disappear
-			pre-synaptic
-			post-synaptic
-			connected
-			unconnected
-			used
-			unused
+			<li><b>pre-synaptic</b> - refering to where a synapse grows from, specifically the neuron dendrites in biology.</li>
+			<li><b>post-synaptic</b> - refering to where a synapse grows towards, specifically the neuron axons in biology.</li>
+			<li><b>permanence</b> - how connected a synapse is.</li>
+			<li><b>threshold</b> - represents the establishment of a synapse.</li>
+			<li><b>connected</b> - a synapse that has its permanence equal to or greater than the threshold value and therefore is affected by post-synaptic cell active or inactive states.</li>
+			<li><b>unconnected</b> - a synapse that has its permanence less than the threshold value and therefore is not affected by post-synaptic cell active or inactive states.</li>
 		</ul>
 	</div>
 
@@ -181,26 +185,25 @@
 	<input class="toggle-box" id="al1" type="checkbox">
 	<label for="al1"><h3>Spatial Pooling</h3></label>
 	<div>
-		<p>The Spatial Pooling algorithm selects a set of columns that best represent the input SDR at a single time step.  This is how an HTM region processes pattern recognition.</p>
+		<p>The Spatial Pooling algorithm selects a set of columns that best represent the input SDR at a single time step.  This is how an HTM region processes patterns, concurrent cell activations.</p>
 
 		<img src="/webpages/technology/htm/sp.gif" alt="sp" style="margin: 25px auto">
 
-		<h4>1. Overlap</h4>
+		<h4>Overlap</h4>
 
 		<p>
 		Spatial Pooling must first compute an overlap value for each column.  It does this by comparing each column's proximal dendrite segment synapses with the input SDR.  For each synapse in the column's proximal dendrite 
-		segment, if the synapse is connected (permanence is equal to or greater than the threshold of 30) and the post-synaptic cell is active, increment the column's overlap.  Otherwise there is no effect on the column's 
-		overlap.
+		segment, if the synapse is connected and the post-synaptic cell is active, increment the column's overlap.  Otherwise there is no effect on the column's overlap.
 		</p>
 
-		<h4>2. Inhibition</h4>
+		<h4>Inhibition</h4>
 
 		<p>
 		After each column computes its own overlap value, Spatial Pooling activates a specified number of columns with the highest overlap score.  Other columns may represent the input pattern quite well, however they are 
 		being inhibited by columns with a stronger match.
 		</p>
 
-		<h4>3. Learning</h4>
+		<h4>Learning</h4>
 
 		<p>Finally, Spatial Pooling uses the synaptic learning rules found in the previous section.</p>
 
@@ -209,11 +212,21 @@
 	<input class="toggle-box" id="al2" type="checkbox">
 	<label for="al2"><h3>Temporal Memory</h3></label>
 	<div>
+		<p>The Temporal Memory algorithm uses previous cell states to set current cell states.  This is how an HTM region processes sequences, temporal cell activations.</p>
+
 		<img src="/webpages/technology/htm/tm.gif" alt="tm" style="margin: 25px auto">
+
+		<h4>Activation</h4>
+
+		<p>If a cell in an active column at the current timestep is in the predict state at the previous timestep, then set the cell to the active state.</p>
 
 		<h4>Bursting</h4>
 
+		<p>If no cells in an active column at the current timestep are in the predict state at the previous timestep, then set all cells in the active column to the active state.</p>
+
 		<h4>Prediction</h4>
+
+		
 
 		<h4>Learning</h4>
 	</div>
