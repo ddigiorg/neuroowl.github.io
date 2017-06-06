@@ -181,15 +181,29 @@
 	<input class="toggle-box" id="al1" type="checkbox">
 	<label for="al1"><h3>Spatial Pooling</h3></label>
 	<div>
+		<p>The Spatial Pooling algorithm selects a set of columns that best represent the input SDR at a single time step.  This is how an HTM region processes pattern recognition.</p>
+
 		<img src="/webpages/technology/htm/sp.gif" alt="sp" style="margin: 25px auto">
 
-		<h4>Overlap</h4>
+		<h4>1. Overlap</h4>
 
-		<p>If the synapse is connected (permanence is above threshold) and the post-synaptic cell is active, increment the column's overlap.</p>
+		<p>
+		Spatial Pooling must first compute an overlap value for each column.  It does this by comparing each column's proximal dendrite segment synapses with the input SDR.  For each synapse in the column's proximal dendrite 
+		segment, if the synapse is connected (permanence is equal to or greater than the threshold of 30) and the post-synaptic cell is active, increment the column's overlap.  Otherwise there is no effect on the column's 
+		overlap.
+		</p>
 
-		<h4>Inhibition</h4>
+		<h4>2. Inhibition</h4>
 
-		<h4>Learning</h4>
+		<p>
+		After each column computes its own overlap value, Spatial Pooling activates a specified number of columns with the highest overlap score.  Other columns may represent the input pattern quite well, however they are 
+		being inhibited by columns with a stronger match.
+		</p>
+
+		<h4>3. Learning</h4>
+
+		<p>Finally, Spatial Pooling uses the synaptic learning rules found in the previous section.</p>
+
 	</div>
 
 	<input class="toggle-box" id="al2" type="checkbox">
