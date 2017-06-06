@@ -16,8 +16,6 @@
 	
 	<h2>Introduction</h2>
 	
-	<p>The ultimate promise of brain theory and machine intelligence is the acquisition and dissemination of new knowledge. <a href="#2">[2]</a></p>
-
 	<p>
 	The goal of building intelligent machines is not to replicate human	behavior, nor to build a brain, nor to create machines to do what humans do.  The goal of building intelligent machines is to create machines that work on
 	the same principles as the brain -- machines that are able to learn, discover, and adapt in ways that computers can't and brains can.  HTM is a	theory of the neocortex and a few related brain structures; it is not an
@@ -25,55 +23,36 @@
 	</p>
 		
 	<h2>HTM Principles</h2>
+
+	<ul>
+		<li><b>Common Algorithms in Regions</b> - Every region of the neocortex performs the same set of memory and algorithmic functions, regardless of processing vision, hearing, touch, language, etc.</li>
+		<li><b>Hierarchy of Regions</b> - Neocortex organizes regions in a hierarchy</li>
+		<li><b>Sparse Distributed Representations (SDRs)</b> - only a small percentage of a population of neurons are active at one time.  Symantic similarity</li>
+		<li><b>Sensory Encoders</b> - Converts some type of data into an SDR to be processed by HTM algorithms</li>
+		<li><b>Sensory-motor Systems</b> - we can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.</li>
+		<li><b>Streaming Data and Sequence Memory</b> - </li>
+		<li><b>On-line Learning</b> - </li>
+		<li><b>Unsupervised</b> - </li>
+	</ul>
 		
-	<h3>Common Algorithms in Regions</h3>
-	
-	<p>
-	Every region of the neocortex performs the same set of memory and algorithmic functions.  We know that brains use common principles for vision, hearing, touch, language, and behavior. This remarkable fact was first proposed
-	in 1979 by Vernon Mountcastle [REF?].  We strive not to understand vision or hearing or robotics as separate problems, but to understand how these capabilities are fundamentally all the same, and what set of algorithms can 
-	see AND hear AND generate behavior. <a href="#2">[2]</a>
-	</p>
-		
-	<h3>Hierarchy of Regions</h3>
-	
-	<p>Every neocortex organizes these regions in a hierarchies.</p>
-		
-	<h3>Sparse Distributed Representations (SDRs)</h3>
+	<h2>Architecture</h2>
 
-	<p>
-	An active neuron is one that is generating spikes, or action potentials.  One of the most remarkable observations about the neocortex is that no matter where you look, the activity of neurons is sparse, meaning only a small
-	percentage of them are rapidly spiking at any point in time.  The sparsity might vary from less than one percent to several percent, but it is always sparse. <a href="#2">[2]</a>
-	</p>
+	<h3>Synapses</h3>
 
-	<p>
-	In HTM SDRs are the representation format used by the neocortex.  SDRs are vectors with thousands of bits.  At any point in time a small percentage of the bits are 1's and the rest are 0's. With SDRs, the bits of the 
-	representation encode the semantic properties of the representation; the representation and its meaning are one and the same. Two SDRs that have 1 bits in the same location share a semantic property. The more 1 bits two 
-	SDRs share, the more semantically similar are the two representations. The SDR explains how brains make semantic generalizations; it is an inherent property of the representation method. <a href="#2">[2]</a>
-	</p>
+	Address
+	Permanence
 
-	<p>[SDR PICTURE]</p>
+	<h3>Dendrite Segments</h3>
 
-	<h3>Sensory Encoders</h3>
-	
-	<p>
-	Every HTM system needs the equivalent of sensory organs. We call these"encoders".  An encoder takes some type of data -- it could be a number, time, temperature, image, or GPS location -- and turns it into a SDR that can 
-	be digested by the HTM learning algorithms. <a href="#2">[2]</a>
-	</p>
+	Proximal
+	Distal
+	Apical
 
-	<h3>Sensory-motor Systems</h3>
-	
-	<p>
-	Neuroanatomy tells us tells us that every region of the neocortex has both sensory and motor functions.  Therefore, vision, hearing, and touch are integrated sensory-motor senses; we can't build systems that see and hear 
-	like humans do without incorporating movement of the eyes, body, and limbs. <a href="#2">[2]</a>
-	</p>
+	<h3>Cells</h3>
 
-	<h3>Streaming Data and Sequence Memory</h3>
-	
-	<p>WIP</p>
+	<h3>Columns</h3>
 
-	<h3>On-line Learning</h3>
-	
-	<p>WIP</p>
+	<h3>Regions</h3>
 
 	<h2>Algorithms</h2>
 
@@ -96,7 +75,7 @@
 	<h4>Prediction</h4>
 
 	<h4>Learning</h4>
-
+	
 
 
 		<h3>Synaptic Learning</h3>
@@ -126,7 +105,7 @@
 			threshold means that patterns experienced more than others will take
 			longer to forget. <a href="#3">[3]</a>
 		</p>
-		<img src="images/technology/htm/synaptic_learning.png" alt="synaptic_learning" style="margin: 25px auto">
+		
 		<p>
 			*Note: Numenta uses floating permanence values from 0.0 to 1.0.  I
 			prefer to use int8 values from 0 to 99, which is why the figures above
@@ -169,7 +148,7 @@
 		<p></p>
 		<p>https://discourse.numenta.org/t/temporal-memory-handling-no-previous-winner-cells/1250</p>
 		<p>https://discourse.numenta.org/t/understanding-the-phrase-layer-x-projects-to-layer-y/1192/3</p>
-		<p>Page update: 2016-10-09</p>
+		<p>Page update: 2017-06-06</p>
 </div>
 </body>
 </html>
