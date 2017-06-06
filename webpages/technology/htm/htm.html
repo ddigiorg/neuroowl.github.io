@@ -24,16 +24,47 @@
 		
 	<h2>HTM Principles</h2>
 
-	<ul>
-		<li><b>Common Algorithms in Regions</b> - Every region of the neocortex performs the same set of memory and algorithmic functions, regardless of processing vision, hearing, touch, language, etc.</li>
-		<li><b>Hierarchy of Regions</b> - Neocortex organizes regions in a hierarchy</li>
-		<li><b>Sparse Distributed Representations (SDRs)</b> - only a small percentage of a population of neurons are active at one time.  Symantic similarity</li>
-		<li><b>Sensory Encoders</b> - Converts some type of data into an SDR to be processed by HTM algorithms</li>
-		<li><b>Sensory-motor Systems</b> - we can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.</li>
-		<li><b>Streaming Data and Sequence Memory</b> - </li>
-		<li><b>On-line Learning</b> - </li>
-		<li><b>Unsupervised</b> - </li>
-	</ul>
+	<input class="toggle-box" id="p0" type="checkbox">
+	<label for="p0"><b>Common Algorithms in Regions</b></label>
+	<div>
+		Every region of the neocortex performs the same set of memory and algorithmic functions, regardless of processing vision, hearing, touch, language, etc.
+	</div>
+
+	<input class="toggle-box" id="p1" type="checkbox">
+	<label for="p1"><b>Hierarchy of Regions</b></label>
+	<div>
+		Neocortex organizes regions in a hierarchy.
+	</div>
+
+	<input class="toggle-box" id="p2" type="checkbox">
+	<label for="p2"><b>Sparse Distributed Representations (SDRs)</b></label>
+	<div>
+		Only a small percentage of a population of neurons are active at one time.  Symantic similarity.
+	</div>
+
+	<input class="toggle-box" id="p3" type="checkbox">
+	<label for="p3"><b>Sensory Encoders</b></label>
+	<div>
+		Converts some type of data into an SDR to be processed by HTM algorithms.
+	</div>
+
+	<input class="toggle-box" id="p4" type="checkbox">
+	<label for="p4"><b>Sensory-Motor Systems</b></label>
+	<div>
+		We can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.
+	</div>
+
+	<input class="toggle-box" id="p5" type="checkbox">
+	<label for="p5"><b>Streaming Data and Sequence Memory</b></label>
+	<div>
+
+	</div>
+
+	<input class="toggle-box" id="p6" type="checkbox">
+	<label for="p6"><b>On-line Unsupervised Learning</b></label>
+	<div>
+
+	</div>
 
 	<h2>Terms</h2>
 	pre-synaptic
@@ -47,101 +78,124 @@
 
 	<h2>Architecture</h2>
 
-	<h3>Regions</h3>
+	<input class="toggle-box" id="ar0" type="checkbox">
+	<label for="ar0"><h3>Regions</h3></label>
+	<div>
 
-	<h3>Columns</h3>
+	</div>
 
-	Overlap
+	<input class="toggle-box" id="ar1" type="checkbox">
+	<label for="ar1"><h3>Columns</h3></label>
+	<div>
+		Overlap
+	</div>
 
-	<h3>Cells</h3>
+	<input class="toggle-box" id="ar2" type="checkbox">
+	<label for="ar2"><h3>Cells</h3></label>
+	<div>
 
-	<h3>Dendrite Segments</h3>
+	</div>
 
-	<p>
+	<input class="toggle-box" id="ar3" type="checkbox">
+	<label for="ar3"><h3>Dendrite Segments</h3></label>
+	<div>
+		<p>
 		Each dendrite segment has synapses.  For a neuron to recognize a pattern of activity it requires a set of co-located synapses (typically 15-20) that connect to a subset of the cells that are active in the pattern to be
 		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment. <a href="#2">[2]</a>
-	</p>
+		</p>
 
-	<p>A HTM cell has three types of dendrite segments:</p>
+		<p>A HTM cell has three types of dendrite segments:</p>
 
-	Proximal
-	Distal
-	Apical
+		Proximal
+		Distal
+		Apical
+	</div>
 
-	<h3>Synapses</h3>
+	<input class="toggle-box" id="ar4" type="checkbox">
+	<label for="ar4"><h3>Synapses</h3></label>
+	<div>
+		<p>Synapses form the fundamental memory storage of the neocortex.  HTM has two synaptic properties:</p>
 
-	<p>Synapses form the fundamental memory storage of the neocortex.  HTM has two synaptic properties:</p>
-
-	<ul>
-		<li><b>Address</b> - Every synapse grows towards an axon, or cell output.  The address </li>
-		<li><b>Permanence</b> - Synaptic permanence shows how connected a synapse is to the axon it grows towards.  Each synapse has a threshold value.  If the permanence is above the threshold the synapse is connected to the
-		axon.  If the permanence is below the threshold the synapse is not connected to the axon.</li>
-	</ul>
+		<ul>
+			<li><b>Address</b> - Every synapse grows towards an axon, or cell output.  The address </li>
+			<li>
+				<b>Permanence</b> - Synaptic permanence shows how connected a synapse is to the axon it grows towards.  Each synapse has a threshold value.  If the permanence is above the threshold the synapse is connected to the
+				axon.  If the permanence is below the threshold the synapse is not connected to the axon.
+			</li>
+		</ul>
+	</div>
 
 	<h2>Algorithms</h2>
 
-	<h3>Synaptic Learning</h3>
+	<input class="toggle-box" id="al0" type="checkbox">
+	<label for="al0"><h3>Synaptic Learning</h3></label>
+	<div>
+		<p>
+			HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 with a threshold of 0.3 while the graphics display integer values from 0 to
+			99 with a threshold of 30 for aesthetic purposes.  The learning rate for the graphics is 5.  Regardless, the synaptic learning rules are the same regardless of the data type.
+		</p>
 
-	<p>
-	HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 with a threshold of 0.3 while the graphics display integer values from 0 to 
-	99 with a threshold of 30 for aesthetic purposes.  The learning rate for the graphics is 5.  Regardless, the synaptic learning rules are the same regardless of the data type.
-	</p>
+		<h4>Initialization</h4>
 
-	<h4>Initialization</h4>
+		<p>Synapse addresses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
 
-	<p>Synapse addresses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
+		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
 
-	<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
+		<h4>Increment Permanence</h4>
 
-	<h4>Increment Permanence</h4>
+		<p>If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</p>
 
-	<p>If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</p>
+		<img src="/webpages/technology/htm/syn-increment.gif" alt="syn-increment" style="margin: 25px auto">
 
-	<img src="/webpages/technology/htm/syn-increment.gif" alt="syn-increment" style="margin: 25px auto">
+		<h4>Decrement Permanence</h4>
 
-	<h4>Decrement Permanence</h4>
+		<p>If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</p>
 
-	<p>If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</p>
+		<img src="/webpages/technology/htm/syn-decrement.gif" alt="syn-decrement" style="margin: 25px auto">
 
-	<img src="/webpages/technology/htm/syn-decrement.gif" alt="syn-decrement" style="margin: 25px auto">
+		<h4>Adapt Synapse</h4>
 
-	<h4>Adapt Synapse</h4>
+		<p>If the synapse permanence is 0, then assign the synapse address to an unused post-synaptic cell and set the permanence just below the threshold.</p>
 
-	<p>If the synapse permanence is 0, then assign the synapse address to an unused post-synaptic cell and set the permanence just below the threshold.</p>
+		<img src="/webpages/technology/htm/syn-adapt.gif" alt="syn-adapt" style="margin: 25px auto">
 
-	<img src="/webpages/technology/htm/syn-adapt.gif" alt="syn-adapt" style="margin: 25px auto">
+		<h4>Insert Synapse</h4>
 
-	<h4>Insert Synapse</h4>
+		<img src="/webpages/technology/htm/syn-insert.gif" alt="syn-insert" style="margin: 25px auto">
 
-	<img src="/webpages/technology/htm/syn-insert.gif" alt="syn-insert" style="margin: 25px auto">
+		<h4>Cull Synapse</h4>
 
-	<h4>Cull Synapse</h4>
+		<img src="/webpages/technology/htm/syn-cull.gif" alt="syn-cull" style="margin: 25px auto">
+	</div>
 
-	<img src="/webpages/technology/htm/syn-cull.gif" alt="syn-cull" style="margin: 25px auto">
+	<input class="toggle-box" id="al1" type="checkbox">
+	<label for="al1"><h3>Spatial Pooling</h3></label>
+	<div>
+		<img src="/webpages/technology/htm/sp.gif" alt="sp" style="margin: 25px auto">
 
-	<h3>Spatial Pooling</h3>
+		<h4>Overlap</h4>
 
-	<img src="/webpages/technology/htm/sp.gif" alt="sp" style="margin: 25px auto">
+		<p>If the synapse is connected (permanence is above threshold) and the post-synaptic cell is active, increment the column's overlap.</p>
 
-	<h4>Overlap</h4>
+		<h4>Inhibition</h4>
 
-	<p>If the synapse is connected (permanence is above threshold) and the post-synaptic cell is active, increment the column's overlap.</p>
+		<h4>Learning</h4>
+	</div>
 
-	<h4>Inhibition</h4>
+	<input class="toggle-box" id="al2" type="checkbox">
+	<label for="al2"><h3>Temporal Memory</h3></label>
+	<div>
+		<img src="/webpages/technology/htm/tm.gif" alt="tm" style="margin: 25px auto">
 
-	<h4>Learning</h4>
+		<h4>Bursting</h4>
 
-	<h3>Temporal Memory</h3>
+		<h4>Prediction</h4>
 
-	<img src="/webpages/technology/htm/tm.gif" alt="tm" style="margin: 25px auto">
+		<h4>Learning</h4>
+	</div>
 
-	<h4>Bursting</h4>
 
-	<h4>Prediction</h4>
 
-	<h4>Learning</h4>
-	
-	
 		<p>
 			The permanence value is incremented and decremented using a Hebbian-like
 			rule. If the permanence value exceeds a threshold, such as 0.3, then
@@ -159,9 +213,9 @@
 			threshold means that patterns experienced more than others will take
 			longer to forget. <a href="#2">[2]</a>
 		</p>
-		
 
-		
+
+
 		<h2>References</h2>
 		<p>
 			<a name="1">[1]</a>
@@ -194,6 +248,6 @@
 		<p>https://discourse.numenta.org/t/temporal-memory-handling-no-previous-winner-cells/1250</p>
 		<p>https://discourse.numenta.org/t/understanding-the-phrase-layer-x-projects-to-layer-y/1192/3</p>
 		<p>Page update: 2017-06-06</p>
-</div>
+	</div>
 </body>
 </html>
