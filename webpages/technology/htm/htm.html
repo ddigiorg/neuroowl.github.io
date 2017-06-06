@@ -83,8 +83,8 @@
 	<h3>Synaptic Learning</h3>
 
 	<p>
-	HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 while the graphics display integer values from 0 to 99 for aesthetic 
-	purposes.  The rules are the same regardless of the data type.
+	HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 with a threshold of 0.3 while the graphics display integer values from 0 to 
+	99 with a threshold of 30 for aesthetic purposes.  The learning rate for the graphics is 5.  Regardless, the synaptic learning rules are the same regardless of the data type.
 	</p>
 
 	<h4>Initialization</h4>
@@ -95,9 +95,13 @@
 
 	<p>If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</p>
 
+	<img src="/webpages/technology/htm/syn-increment.gif" alt="syn-increment" style="margin: 25px auto">
+
 	<h4>Decrement Permanence</h4>
 
 	<p>If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</p>
+
+	<img src="/webpages/technology/htm/syn-decrement.gif" alt="syn-decrement" style="margin: 25px auto">
 
 	<h4>Adapt Synapse</h4>
 
