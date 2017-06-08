@@ -124,14 +124,9 @@
 		<p>
 		Synapses form the fundamental memory storage of the neocortex.  HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Over time synapses "grow" towards cells that are often active and 
 		"shrink" away from cells that are often inactive.  This is modeled by a scalar value called permanence, floating-point values from 0.0 to 1.0 with a threshold of 0.3.  Note, the graphics display integer values from 0 to
-		99 with a threshold of 30 purely for aesthetic purposes.  The synaptic learning rules are the same regardless of the data type.
+		99 with a threshold of 30 purely for aesthetic purposes.  The synaptic learning rules are the same regardless of the data type.  Synapses behave in 5 ways:
 		</p>
-
-		<p>In HTM, Synapses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
-
-		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
-
-		<p>Synapses behave in 5 ways:</p>
+				
 		<ul>
 			<li><b>Grow</b> - If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</li>
 			<li><b>Shrink</b> - If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</li>
@@ -142,14 +137,10 @@
 
 		<img src="/webpages/technology/htm/synapse.gif" alt="synapse" style="margin: 25px auto">
 
-		<p>
-		"Using a scalar permanence value enables on-line learning in the presence of noise. A previously unseen input pattern could be noise or it could be the start of a new trend that will repeat in the future.  By growing 
-		new synapses, the network can start to learn a new pattern when it is first encountered, but only act differently after several presentations of the new pattern. Increasing permanence beyond the threshold means that 
-		patterns experienced more than others will take longer to forget." <sup><a href="#2">[2]</a></sup> 
-			
-		^^^^^^^SEARCH FOR CORRECT REF
-		</p>
+		<p>In HTM, Synapses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
 
+		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
+				
 		<h4>Terms</h4>
 		<ul>
 			<li><b>pre-synaptic</b> - refering to where a synapse grows from, specifically the neuron dendrites in biology.</li>
