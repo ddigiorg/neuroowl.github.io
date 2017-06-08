@@ -56,22 +56,36 @@
 	<input class="toggle-box" id="p3" type="checkbox">
 	<label for="p3"><h3>Sparse Distributed Representations (SDRs)</h3></label>
 	<div>
-		<p>A Sparse Distributed Representation is a binary data structure where only a very small subset of values, typically 2% in HTM theory, are "on".</p>
+		<p>
+		A Sparse Distributed Representation is a binary data structure(0s or 1s) where a small percentage, typically 2% in HTM theory, of bits are 1.  Two SDRs that have 1 bits in the same location share a semantic property. 
+		The more 1 bits two SDRs share, the more semantically similar are the two representations. <sup><a href="#1">[1]</a></sup>
+		</p>
 
-		NEED TO DISCUSS SYMANTIC GENERALIZATION AND INSERT A GRAPHIC
+		[GRAPHIC]
 
-		shared bits = symantic similarity
+		<p>Mathematical properties and advantages of SDRs include: <sup><a href="#1">[1]</a></sup></p>
+
+		<ul>
+			<li><b>Capacity of SDRs and the probability of mismatches</b> - </li>
+			<li><b>Robustness of SDRs and the probability of error with noise</b> - </li>
+			<li><b>Reliable classification of a list of SDR vectors</b> - </li>
+			<li><b>Unions of SDRs</b> - </li>
+			<li><b>Robustness of unions in the presence of noise</b> - </li>
+		</ul>
 	</div>
 
 	<input class="toggle-box" id="p4" type="checkbox">
 	<label for="p4"><h3>Sensory Encoders</h3></label>
 	<div>
+		WIP 
 		Converts some type of data into an SDR to be processed by HTM algorithms.
 	</div>
 
 	<input class="toggle-box" id="p5" type="checkbox">
 	<label for="p5"><h3>Sensory-Motor Systems</h3></label>
 	<div>
+		WIP
+
 		We can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.
 
 		The neocortex learns a sensory-motor model of the world.  It learns given a sequence of sensory patterns and a sequence of actions what's going to happen next (prediction).
@@ -80,6 +94,7 @@
 	<input class="toggle-box" id="p6" type="checkbox">
 	<label for="p6"><h3>On-line Unsupervised Learning</h3></label>
 	<div>
+		WIP 
 		Strengthening and weakening of synapses 
 	</div>
 
@@ -88,6 +103,8 @@
 	<input class="toggle-box" id="ar0" type="checkbox">
 	<label for="ar0"><h3>Regions</h3></label>
 	<div>
+		WIP
+
 		<p>
 		A HTM region is the equivalant of a cortical macrocolumn in a brain area (like V1 or MT), a collection of cortical minicolumns.  The neocortex typically contains 6 layers which HTM theory functionally
 		</p>
@@ -103,6 +120,8 @@
 	<input class="toggle-box" id="ar1" type="checkbox">
 	<label for="ar1"><h3>Columns</h3></label>
 	<div>
+		WIP
+
 		<p>
 		A HTM column is the equivalent of a cortical minicolumn, a collection of neurons that respond to the same receptive field.
 		</p>
@@ -127,6 +146,7 @@
 		<h4>Terms</h4>
 		<ul>
 			<li><b>axon</b> - In HTM, axons are modeled simply by using the cell state at the current time step.</li>
+			<li><b>inactive</b> - In HTM, an inactive cell 
 			<li><b>active</b> - In HTM, an active cell represents a recognized pattern in the context of active cells at the previous time step.  In neuroscience, an active cell is a neuron outputting action potentials.</li>
 			<li><b>predict</b> - In HTM, a predict cell represents a potential occourance of a pattern at the next timestep in the context of active cells at the current timestep.  In neuroscience, a predict cell is a depolarized neuron which means it is more susceptible to feedforward inputs causeing the neuron to output action potentials.</li>
 			<li><b>winner</b> - In HTM, a winner (or learn) cell is affected by the synaptic learning rules at the previous timestep.  There is no equivalent in neuroscience and is merely a computational optimization of HTM algorithms.</li>
@@ -137,16 +157,16 @@
 	<label for="ar3"><h3>Dendrite Segments</h3></label>
 	<div>
 		<p>
-		It has been previously proposed that non-linear properties of dendrites enable cortical neurons to recognize multiple independent patterns. <a href="#2">[2]</a>  If a number of synapses become active at relatively the 
-		same time (few milliseconds) in a short distance from each other (~40 microns) you get a non-linear event that generates a dendritic spike which puts the cell body into an anticipatory state.  Therefore, every little 
-		section of the dendritic tree is like a coincidence or threshold detector.
+		It has been previously proposed that non-linear properties of dendrites enable cortical neurons to recognize multiple independent patterns. <sup><a href="#2">[2]</a></sup>  If a number of synapses become active at 
+		relatively the same time (few milliseconds) in a short distance from each other (~40 microns) you get a non-linear event that generates a dendritic spike which puts the cell body into an anticipatory state.  Therefore,
+		every little section of the dendritic tree is like a coincidence or threshold detector.
 		</p>
 
 		[GRAPHIC]
 		
 		<p>
 		"Each dendrite segment has synapses.  For a neuron to recognize a pattern of activity it requires a set of co-located synapses (typically 15-20) that connect to a subset of the cells that are active in the pattern to be
-		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment." <a href="#2">[2]</a>
+		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment." <sup><a href="#2">[2]</a></sup>
 		</p>
 
 		<h4>Terms</h4>
@@ -250,8 +270,6 @@
 		Winner cells at the current time step look for winner cells at the previous time step and forms connections to them on one of the dendritic segments.  Therefore, if the cell sees that pattern again the cell will 
 		predict its own activity.
 		</p>
-
-
 	</div>
 
 	<h2>References</h2>
@@ -263,13 +281,8 @@
 		<li><a name="4" href="https://arxiv.org/abs/1512.05463">Yuwei Cui, Subutai Ahmad and Jeff Hawkins. Continuous Online Sequence Learning with an Unsupervised Neural Network Model, 2015.</a></li>
 		<li><a name="5" href="https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697">Discourse: Preliminary details about new theory work on sensory-motor inference</a></li>
 	</ol>
-			
-	<p>WIP:</p>
-	<p>https://discourse.numenta.org/t/temporal-memory-handling-no-previous-winner-cells/1250</p>
-	<p>https://discourse.numenta.org/t/understanding-the-phrase-layer-x-projects-to-layer-y/1192/3</p>
 	
-	<p>Page update: 2017-06-06</p>
-	
+	<p>Page update: 2017-06-08</p>
 </div>
 </body>
 </html>
