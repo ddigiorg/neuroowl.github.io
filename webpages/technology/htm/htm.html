@@ -13,7 +13,7 @@
 	<h1>Hierarchical Temporal Memory</h1>
 
 	<p>Hierarchical Temporal Memory (HTM) is a theoretical framework of the neocortex for both biological and machine intelligence under development by <a href="http://numenta.com/">Numenta</a>.</p>
-	
+
 	<h2>Introduction</h2>
 	
 	<p>
@@ -25,45 +25,62 @@
 	<h2>HTM Principles</h2>
 
 	<input class="toggle-box" id="p0" type="checkbox">
-	<label for="p0"><h3>Common Algorithms in Regions</h3></label>
+	<label for="p0"><h3>Hierarchical</h3></label>
 	<div>
-		Every region of the neocortex performs the same set of memory and algorithmic functions, regardless of processing vision, hearing, touch, language, etc.
+		<p>
+		The regions of the neocortex are connected in a logical "hierarchy". Because all the regions of the neocortex perform the same basic memory operations, the detailed understanding of one neocortical region leads us to 
+		understand how the rest of the neocortex works.
+		</p>
 	</div>
 
 	<input class="toggle-box" id="p1" type="checkbox">
-	<label for="p1"><h3>Hierarchy of Regions</h3></label>
+	<label for="p1"><h3>Temporal (Sequence Memory)</h3></label>
 	<div>
-		Neocortex organizes regions in a hierarchy.
+		<p>
+		The memory in the neocortex is primarily a memory of time changing, or "temporal", patterns.  The inputs and outputs of the neocortex are constantly in motion, usually changing completely several times a second.  Each 
+		region of the neocortex learns a time-based model of its inputs, it learns to predict the changing input stream, and it learns to play back sequences of motor commands.
+		</p>
+
+		<p>HTM learns patterns that are changing over time.  Every neuron in the neocortex is learning transitions of patterns.  HTM is based on the memory and recall of a sequence of patterns.</p>
 	</div>
 
 	<input class="toggle-box" id="p2" type="checkbox">
-	<label for="p2"><h3>Sparse Distributed Representations (SDRs)</h3></label>
+	<label for="p2"><h3>Memory</h3></label>
 	<div>
-		Only a small percentage of a population of neurons are active at one time.  Symantic similarity.
+		<p>
+		The neocortex is a memory system.  The neocortex must learn the structure of the world from the sensory patterns that stream into the brain. Each neuron learns by forming connections, and each region of the neocortex 
+		is best understood as a type of memory system.
+		</p>
 	</div>
 
 	<input class="toggle-box" id="p3" type="checkbox">
-	<label for="p3"><h3>Sensory Encoders</h3></label>
+	<label for="p3"><h3>Sparse Distributed Representations (SDRs)</h3></label>
+	<div>
+		<p>A Sparse Distributed Representation is a binary data structure where only a very small subset of values, typically 2% in HTM theory, are "on".</p>
+
+		NEED TO DISCUSS SYMANTIC GENERALIZATION AND INSERT A GRAPHIC
+
+		shared bits = symantic similarity
+	</div>
+
+	<input class="toggle-box" id="p4" type="checkbox">
+	<label for="p4"><h3>Sensory Encoders</h3></label>
 	<div>
 		Converts some type of data into an SDR to be processed by HTM algorithms.
 	</div>
 
-	<input class="toggle-box" id="p4" type="checkbox">
-	<label for="p4"><h3>Sensory-Motor Systems</h3></label>
+	<input class="toggle-box" id="p5" type="checkbox">
+	<label for="p5"><h3>Sensory-Motor Systems</h3></label>
 	<div>
 		We can't build systems that see and hear like humans do without incorporating movement of the eyes, body, and limbs.
-	</div>
 
-	<input class="toggle-box" id="p5" type="checkbox">
-	<label for="p5"><h3>Streaming Data and Sequence Memory</h3></label>
-	<div>
-
+		The neocortex learns a sensory-motor model of the world.  It learns given a sequence of sensory patterns and a sequence of actions what's going to happen next (prediction).
 	</div>
 
 	<input class="toggle-box" id="p6" type="checkbox">
 	<label for="p6"><h3>On-line Unsupervised Learning</h3></label>
 	<div>
-
+		Strengthening and weakening of synapses 
 	</div>
 
 	<h2>Architecture</h2>
@@ -71,7 +88,9 @@
 	<input class="toggle-box" id="ar0" type="checkbox">
 	<label for="ar0"><h3>Regions</h3></label>
 	<div>
-
+		<p>
+		A HTM region is the equivalant of a cortical macrocolumn in a brain area (like V1 or MT), a collection of cortical minicolumns.  The neocortex typically contains 6 layers which HTM theory functionally
+		</p>
 		Layers
 
 		<h4>Terms</h4>
@@ -84,38 +103,59 @@
 	<input class="toggle-box" id="ar1" type="checkbox">
 	<label for="ar1"><h3>Columns</h3></label>
 	<div>
+		<p>
+		A HTM column is the equivalent of a cortical minicolumn, a collection of neurons that respond to the same receptive field.
+		</p>
+
 		<h4>Terms</h4>
 		
 		Overlap
-		Proximal
+		
 	</div>
 
 	<input class="toggle-box" id="ar2" type="checkbox">
 	<label for="ar2"><h3>Cells</h3></label>
 	<div>
+		<p>
+		The structure of an HTM cell, or neuron, is modeled after pyramidal neurons in the neocortex. In a human neocortex, only about 2% of neurons are in an active state at any point in time (sparsity).  When a neuron is 
+		active the axon outputs a short burst of action potentials. When it is in a predictive state the axon outputs a slower, steady rate of action potentials.  The action potentials, spikes with frequency, are not modeled 
+		in HTM.
+		</p>
+
+		<img src="/webpages/technology/htm/cell.png" alt="cell" style="margin: 25px auto">
 
 		<h4>Terms</h4>
-
-		active - an active cell represents a recognized pattern in the context of active cells at the previous time step.  This simulates a neuron outputting action potentials.
-		predict - a predict cell represents a potential occourance of a pattern at the next timestep in the context of active cells at the current timestep.  A predict cell has an easier time becoming active than an unpredicted cell.  This simulates a depolarized neuron.
-		winner - 
+		<ul>
+			<li><b>axon</b> - In HTM, axons are modeled simply by using the cell state at the current time step.</li>
+			<li><b>active</b> - In HTM, an active cell represents a recognized pattern in the context of active cells at the previous time step.  In neuroscience, an active cell is a neuron outputting action potentials.</li>
+			<li><b>predict</b> - In HTM, a predict cell represents a potential occourance of a pattern at the next timestep in the context of active cells at the current timestep.  In neuroscience, a predict cell is a depolarized neuron which means it is more susceptible to feedforward inputs causeing the neuron to output action potentials.</li>
+			<li><b>winner</b> - In HTM, a winner (or learn) cell is affected by the synaptic learning rules at the previous timestep.  There is no equivalent in neuroscience and is merely a computational optimization of HTM algorithms.</li>
+		</ul>		
 	</div>
 
 	<input class="toggle-box" id="ar3" type="checkbox">
 	<label for="ar3"><h3>Dendrite Segments</h3></label>
 	<div>
 		<p>
-		Each dendrite segment has synapses.  For a neuron to recognize a pattern of activity it requires a set of co-located synapses (typically 15-20) that connect to a subset of the cells that are active in the pattern to be
-		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment. <a href="#2">[2]</a>
+		It has been previously proposed that non-linear properties of dendrites enable cortical neurons to recognize multiple independent patterns. <a href="#2">[2]</a>  If a number of synapses become active at relatively the 
+		same time (few milliseconds) in a short distance from each other (~40 microns) you get a non-linear event that generates a dendritic spike which puts the cell body into an anticipatory state.  Therefore, every little 
+		section of the dendritic tree is like a coincidence or threshold detector.
 		</p>
 
-		<p>A HTM cell has three types of dendrite segments:</p>
+		[GRAPHIC]
+		
+		<p>
+		"Each dendrite segment has synapses.  For a neuron to recognize a pattern of activity it requires a set of co-located synapses (typically 15-20) that connect to a subset of the cells that are active in the pattern to be
+		recognized. Learning to recognize a new pattern is accomplished by the formation of a set of new synapses collocated on a dendritic segment." <a href="#2">[2]</a>
+		</p>
 
 		<h4>Terms</h4>
-				
-		Basal
-		Distal
-		Apical
+		<ul>
+			<li><b>proximal</b> - feedforward input affecting whether a column enters active state.  Used for pattern learning.</li>
+			<li><b>distal</b> - lateral contextual input affecting whether a cell enters predict state.  Used for sequence learning.</li>
+			<li><b>basal</b> - another name for distal sometimes used in HTM theory.</li>
+			<li><b>apical</b> - feedback contextual input affecting whether a cell enters predict state.</li>
+		</ul>
 	</div>
 
 	<input class="toggle-box" id="ar4" type="checkbox">
@@ -136,11 +176,7 @@
 		</ul>
 
 		<img src="/webpages/technology/htm/synapse.gif" alt="synapse" style="margin: 25px auto">
-
-		<p>In HTM, Synapses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
-
-		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
-				
+			
 		<h4>Terms</h4>
 		<ul>
 			<li><b>pre-synaptic</b> - refering to where a synapse grows from, specifically the neuron dendrites in biology.</li>
@@ -155,7 +191,18 @@
 	<h2>Algorithms</h2>
 
 	<input class="toggle-box" id="al0" type="checkbox">
-	<label for="al0"><h3>Spatial Pooling</h3></label>
+	<label for="al0"><h3>Initialization</h3></label>
+	<div>
+		<p>
+		In HTM, each column sees a "potential pool", or random subset, of the input bits.  Each column's proximal dendrite segment may initialize its synapses randomly or arranged within a receptive field.  Synapse permanences 
+		are initialized on or slightly below the threshold.
+		</p>
+
+		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">		
+	</div>
+
+	<input class="toggle-box" id="al1" type="checkbox">
+	<label for="al1"><h3>Spatial Pooling</h3></label>
 	<div>
 		<p>The Spatial Pooling algorithm selects a set of columns that best represent the input SDR at a single time step.  This is how an HTM region processes patterns, concurrent cell activations.</p>
 
@@ -164,25 +211,24 @@
 		<h4>Overlap</h4>
 
 		<p>
-		Spatial Pooling must first compute an overlap value for each column.  It does this by comparing each column's proximal dendrite segment synapses with the input SDR.  For each synapse in the column's proximal dendrite 
-		segment, if the synapse is connected and the post-synaptic cell is active, increment the column's overlap.  Otherwise there is no effect on the column's overlap.
+		For each column, compute the overlap score, or how how well the column's proximal synapses respond to the input SDR.  For each synapse in the column's proximal dendrite segment, if the synapse is connected and the 
+		post-synaptic cell is active, increment the column's overlap.  Otherwise there is no effect on the column's overlap.
 		</p>
 
 		<h4>Inhibition</h4>
 
 		<p>
-		After each column computes its own overlap value, Spatial Pooling activates a specified number of columns with the highest overlap score.  Other columns may represent the input pattern quite well, however they are 
-		being inhibited by columns with a stronger match.
+		After each column computes its own overlap value, enforce sparsity by selecting a specified number of columns with the highest overlap score.  Usually ~2% of the possible columns will be activated.  Other columns may 
+		represent the input pattern quite well, however they are being inhibited by columns with a stronger match.
 		</p>
 
 		<h4>Learning</h4>
 
-		<p>Finally, Spatial Pooling uses the synaptic learning rules found in the previous section.</p>
-
+		<p>Finally, adjust the column's proximal synapses to better match the input SDR by using the synaptic learning rules found in the previous section.</p>
 	</div>
 
-	<input class="toggle-box" id="al1" type="checkbox">
-	<label for="al1"><h3>Temporal Memory</h3></label>
+	<input class="toggle-box" id="al2" type="checkbox">
+	<label for="al2"><h3>Temporal Memory</h3></label>
 	<div>
 		<p>The Temporal Memory algorithm uses previous cell states to set current cell states.  This is how an HTM region processes sequences, temporal cell activations.</p>
 
@@ -199,13 +245,20 @@
 		<h4>Prediction</h4>
 
 		<h4>Learning</h4>
+		
+		<p>
+		Winner cells at the current time step look for winner cells at the previous time step and forms connections to them on one of the dendritic segments.  Therefore, if the cell sees that pattern again the cell will 
+		predict its own activity.
+		</p>
+
+
 	</div>
 
 	<h2>References</h2>
 
 	<ol>
 		<li><a name="1" href="http://numenta.com/biological-and-machine-intelligence/">Jeff Hawkins et al. Biological and Machine Intelligence, 2016.</a></li>
-		<li><a name="2" href="http://journal.frontiersin.org/article/10.3389/fncir.2016.00023/full">Subutai Ahmad and Yuwei Chu. Annotated Bibliography for HTM Researchers, 2016.</a></li>
+		<li><a name="2" href="http://journal.frontiersin.org/article/10.3389/fncir.2016.00023/full">Jeff Hawkins and Subutai Ahmad. Why Neurons Have Thousands of Synapses, a Theory of Sequence Memory in Neocortex, 2016.</a></li>
 		<li><a name="3" href="https://github.com/numenta/nupic.research/blob/master/docs/bibliography/htm_bibliography.pdf">Subutai Ahmad and Yuwei Chu. Annotated Bibliography for HTM Researchers, 2016.</a></li>
 		<li><a name="4" href="https://arxiv.org/abs/1512.05463">Yuwei Cui, Subutai Ahmad and Jeff Hawkins. Continuous Online Sequence Learning with an Unsupervised Neural Network Model, 2015.</a></li>
 		<li><a name="5" href="https://discourse.numenta.org/t/preliminary-details-about-new-theory-work-on-sensory-motor-inference/697">Discourse: Preliminary details about new theory work on sensory-motor inference</a></li>
