@@ -72,6 +72,13 @@
 	<label for="ar0"><h3>Regions</h3></label>
 	<div>
 
+		Layers
+
+		<h4>Terms</h4>
+
+		feedforward - inputs coming from lower regions
+		feedback - inputs coming from higher regions
+		lateral - inputs coming from regions of the same level
 	</div>
 
 	<input class="toggle-box" id="ar1" type="checkbox">
@@ -89,8 +96,8 @@
 
 		<h4>Terms</h4>
 
-		active - a cell in an active state, or outputting action potentials, represents a recognized feed-forward pattern in the context of a SDR of previous cell activations.
-		predict - a cell in a predict state, or depolarized, represents the potential occourance at the next timestep of a feed-forward pattern in the context of cell activations at the current timestep.
+		active - an active cell represents a recognized pattern in the context of active cells at the previous time step.  This simulates a neuron outputting action potentials.
+		predict - a predict cell represents a potential occourance of a pattern at the next timestep in the context of active cells at the current timestep.  A predict cell has an easier time becoming active than an unpredicted cell.  This simulates a depolarized neuron.
 		winner - 
 	</div>
 
@@ -114,21 +121,36 @@
 	<input class="toggle-box" id="ar4" type="checkbox">
 	<label for="ar4"><h3>Synapses</h3></label>
 	<div>
-		<p>Synapses form the fundamental memory storage of the neocortex.</p>
+		<p>
+		Synapses form the fundamental memory storage of the neocortex.  HTM synapses use Hebbian-like learning rules to aquire knowledge about the world.  Over time synapses "grow" towards cells that are often active and 
+		"shrink" away from cells that are often inactive.  This is modeled by a scalar value called permanence, floating-point values from 0.0 to 1.0 with a threshold of 0.3.  Note, the graphics display integer values from 0 to
+		99 with a threshold of 30 purely for aesthetic purposes.  The synaptic learning rules are the same regardless of the data type.
+		</p>
 
-		A synapse with a permanence value of 1.0 has the same effect as a synapse with a permanence value at threshold but is not as easily	forgotten.
+		<p>In HTM, Synapses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
 
-		Using a scalar permanence value enables on-line learning in
-		the presence of noise. A previously unseen input pattern could be noise
-		or it could be the start of a new trend that will repeat in the future.
-		By growing new synapses, the network can start to learn a new pattern
-		when it is first encountered, but only act differently after several
-		presentations of the new pattern. Increasing permanence beyond the
-		threshold means that patterns experienced more than others will take
-		longer to forget. <a href="#2">[2]</a>
+		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
+
+		<p>Synapses behave in 5 ways:</p>
+		<ul>
+			<li><b>Grow</b> - If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</li>
+			<li><b>Shrink</b> - If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</li>
+			<li><b>Adapt</b> - If permanence is 0, then move synapse to an unused post-synaptic cell and set the permanence just below the threshold.</li>
+			<li><b>Insert</b> - If there are more active post-synaptic cells than synapses, then insert a synapse to an active post-synaptic cell.</li>
+			<li><b>Remove</b> - If the synapse permanence is 0 and there are no available active post-synaptic cells, then remove the synapse.</li>
+		</ul>
+
+		<img src="/webpages/technology/htm/synapse.png" alt="synapse" style="margin: 25px auto">
+
+		<p>
+		"Using a scalar permanence value enables on-line learning in the presence of noise. A previously unseen input pattern could be noise or it could be the start of a new trend that will repeat in the future.  By growing 
+		new synapses, the network can start to learn a new pattern when it is first encountered, but only act differently after several presentations of the new pattern. Increasing permanence beyond the threshold means that 
+		patterns experienced more than others will take longer to forget." <sup><a href="#2">[2]</a></sup> 
+			
+		^^^^^^^SEARCH FOR CORRECT REF
+		</p>
 
 		<h4>Terms</h4>
-
 		<ul>
 			<li><b>pre-synaptic</b> - refering to where a synapse grows from, specifically the neuron dendrites in biology.</li>
 			<li><b>post-synaptic</b> - refering to where a synapse grows towards, specifically the neuron axons in biology.</li>
@@ -142,48 +164,7 @@
 	<h2>Algorithms</h2>
 
 	<input class="toggle-box" id="al0" type="checkbox">
-	<label for="al0"><h3>Synaptic Learning</h3></label>
-	<div>
-		<p>
-		HTM synapses use Hebbian-like learning rules to aquire knowledge about the world by modifying address and permanence values.  Note, HTM uses floating-point permanence values from 0.0 to 1.0 with a threshold of 0.3 
-		while the graphics display integer values from 0 to	99 with a threshold of 30 for aesthetic purposes.  The learning rate for the graphics is 5.  The synaptic learning rules are the same regardless of the data type.
-		</p>
-
-		<h4>Initialization</h4>
-
-		<p>Synapse addresses may be randomly initialized or arranged within a receptive field.  Synapse permanences are initialized on or slightly below the threshold.</p>
-
-		<img src="/webpages/technology/htm/syn-initialization.png" alt="syn-initialization" style="margin: 25px auto">
-
-		<h4>Increment Permanence</h4>
-
-		<p>If the post-synaptic cell is active, then increment the synapse permanence by the learning rate.</p>
-
-		<img src="/webpages/technology/htm/syn-increment.gif" alt="syn-increment" style="margin: 25px auto">
-
-		<h4>Decrement Permanence</h4>
-
-		<p>If the post-synaptic cell is inactive, then decrement the synapse permanence by the learning rate.</p>
-
-		<img src="/webpages/technology/htm/syn-decrement.gif" alt="syn-decrement" style="margin: 25px auto">
-
-		<h4>Adapt Synapse</h4>
-
-		<p>If the synapse permanence is 0, then assign the synapse address to an unused post-synaptic cell and set the permanence just below the threshold.</p>
-
-		<img src="/webpages/technology/htm/syn-adapt.gif" alt="syn-adapt" style="margin: 25px auto">
-
-		<h4>Insert Synapse</h4>
-
-		<img src="/webpages/technology/htm/syn-insert.gif" alt="syn-insert" style="margin: 25px auto">
-
-		<h4>Cull Synapse</h4>
-
-		<img src="/webpages/technology/htm/syn-cull.gif" alt="syn-cull" style="margin: 25px auto">
-	</div>
-
-	<input class="toggle-box" id="al1" type="checkbox">
-	<label for="al1"><h3>Spatial Pooling</h3></label>
+	<label for="al0"><h3>Spatial Pooling</h3></label>
 	<div>
 		<p>The Spatial Pooling algorithm selects a set of columns that best represent the input SDR at a single time step.  This is how an HTM region processes patterns, concurrent cell activations.</p>
 
@@ -209,8 +190,8 @@
 
 	</div>
 
-	<input class="toggle-box" id="al2" type="checkbox">
-	<label for="al2"><h3>Temporal Memory</h3></label>
+	<input class="toggle-box" id="al1" type="checkbox">
+	<label for="al1"><h3>Temporal Memory</h3></label>
 	<div>
 		<p>The Temporal Memory algorithm uses previous cell states to set current cell states.  This is how an HTM region processes sequences, temporal cell activations.</p>
 
@@ -225,8 +206,6 @@
 		<p>If no cells in an active column at the current timestep are in the predict state at the previous timestep, then set all cells in the active column to the active state.</p>
 
 		<h4>Prediction</h4>
-
-		
 
 		<h4>Learning</h4>
 	</div>
