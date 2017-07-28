@@ -142,6 +142,7 @@
 	width: 30px;
 }
 
-.toggle-box:checked + label:before {
-  content: "\25BC";
+.toggle-box:checked + label:before
+{
+	content: "\25BC";
 }
