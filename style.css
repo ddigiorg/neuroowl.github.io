@@ -35,6 +35,7 @@
 	text-align: center
 }
 
+/* links */
 a:link{color: blue; text-decoration: none;}
 a:visited{color: blue; text-decoration: none;}
 a:hover{color: aqua; text-decoration: none;}
