@@ -30,16 +30,15 @@
 .text h3 {font-size: 18px;}
 .text h4 {font-size: 14px;}
 
+.text a:link    {color: #0000ff; text-decoration: none;}
+.text a:visited {color: #0000ff; text-decoration: none;}
+.text a:hover   {color: #00ffff; text-decoration: none;}
+.text a:active  {color: #0000ff; text-decoration: none;}
+
 .center
 {
 	text-align: center
 }
-
-/* links */
-a:link    {color: #0000ff; text-decoration: none;}
-a:visited {color: #0000ff; text-decoration: none;}
-a:hover   {color: #00ffff; text-decoration: none;}
-a:active  {color: #0000ff; text-decoration: none;}
 
 /*Youtube video display settings*/
 .center iframe
