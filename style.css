@@ -33,7 +33,7 @@
 .text a:link    {color: #0000ff; text-decoration: none;}
 .text a:visited {color: #0000ff; text-decoration: none;}
 .text a:hover   {color: #00ffff; text-decoration: none;}
-.text a:active  {color: #0000ff; text-decoration: none;}
+.text a:active  {color: #ff00ff; text-decoration: none;}
 
 .center
 {
